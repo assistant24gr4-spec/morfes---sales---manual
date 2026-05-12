@@ -4,980 +4,1060 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sales Manual — Μορφές Έκφρασης 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#1a2744; --teal:#2e75b6; --gold:#c9a227; --cream:#faf8f3;
-  --ink:#1e1e2e; --muted:#6b7280; --border:#e5e0d8;
-  --red:#c00000; --green:#166534; --orange:#c55a11;
-  --bg-red:#fff1f0; --bg-green:#f0faf4; --bg-blue:#eef6ff;
-  --bg-yellow:#fffbeb; --bg-gray:#f9f8f5;
-}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:14px;line-height:1.7}
-a{color:var(--teal);text-decoration:none}
-a:hover{text-decoration:underline}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f3;color:#1a1a1a;font-size:14px}
+a{color:inherit;text-decoration:none}
 
-@media print{
-  .no-print{display:none!important}
-  body{font-size:11px}
-  .cover{padding:40px;min-height:auto}
-}
+/* TOP BAR */
+.top-bar{background:#fff;border-bottom:1px solid #e5e5e3;padding:12px 24px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:200;flex-wrap:wrap}
+.logo{width:38px;height:38px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#1d4ed8;flex-shrink:0}
+.brand-name{font-size:15px;font-weight:700;color:#111}
+.brand-sub{font-size:11px;color:#888;margin-top:1px}
+.top-right{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.sync-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:#888;padding:4px 10px;border:1px solid #e5e5e3;border-radius:20px;background:#fff}
+.sync-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.top-btn{font-size:12px;padding:5px 10px;border:1px solid #ddd;border-radius:6px;background:#fff;color:#555;cursor:pointer;font-family:inherit;transition:all .12s}
+.top-btn:hover{background:#111;color:#fff;border-color:#111}
 
-/* COVER */
-.cover{background:var(--navy);padding:52px 60px 44px;position:relative;overflow:hidden}
-.cover::before{content:'';position:absolute;top:-60px;right:-60px;width:360px;height:360px;border-radius:50%;background:rgba(46,117,182,.15);pointer-events:none}
-.cover-brand{font-family:'Playfair Display',serif;color:#fff;font-size:28px;font-weight:900;margin-bottom:3px}
-.cover-brand span{color:var(--gold)}
-.cover-sub{color:rgba(255,255,255,.45);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px}
-.cover-title{font-family:'Playfair Display',serif;color:#fff;font-size:44px;font-weight:700;line-height:1.05;max-width:540px;margin-bottom:20px}
-.cover-meta{display:flex;gap:28px;flex-wrap:wrap}
-.meta-i strong{color:#fff;display:block;font-size:12px;font-weight:600}
-.meta-i span{color:rgba(255,255,255,.55);font-size:11px}
-.cover-btns{position:absolute;top:20px;right:20px;display:flex;gap:8px}
-.cbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 16px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:.2s}
-.cbtn:hover{background:rgba(255,255,255,.2)}
+/* CONTAINER */
+.container{max-width:920px;margin:0 auto;padding:24px 16px}
 
-/* NAV */
-.nav{background:#fff;border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:100;display:flex;overflow-x:auto;gap:0}
-.nav a{padding:13px 16px;font-size:11px;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2px;text-transform:uppercase;letter-spacing:.5px;transition:.2s}
-.nav a:hover,.nav a.active{color:var(--navy);border-bottom-color:var(--gold)}
+/* HEADER STATS */
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:22px}
+.hcard{background:#fff;border:1px solid #e8e8e6;border-radius:10px;padding:12px 14px}
+.hcard-label{font-size:10px;color:#aaa;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.hcard-val{font-size:13px;font-weight:600;color:#111}
+.hcard-sub{font-size:11px;color:#888;margin-top:1px}
 
-/* MAIN */
-.main{max-width:1000px;margin:0 auto;padding:40px 24px}
-.section{margin-bottom:56px}
-.sec-hd{padding-bottom:10px;border-bottom:3px solid var(--gold);margin-bottom:6px}
-.sec-title{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);font-weight:700;display:inline}
-.sec-desc{color:var(--muted);font-size:13px;margin:8px 0 20px}
-.sep{height:1px;background:var(--border);margin:32px 0}
+/* MAIN NAV */
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:22px;background:#fff;border:1px solid #e8e8e6;border-radius:12px;padding:10px 12px}
+.mnav{padding:6px 14px;font-size:12px;border:1px solid transparent;border-radius:7px;background:transparent;color:#666;cursor:pointer;transition:all .13s;font-family:inherit;font-weight:400}
+.mnav:hover{background:#f5f5f3;color:#111}
+.mnav.on{background:#111;color:#fff;font-weight:500;border-color:#111}
+.sec{display:none}
+.sec.on{display:block}
 
 /* CARDS */
-.info-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px}
-.info-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:14px}
-.irow{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid #f0ede7;font-size:13px}
-.irow:last-child{border:none}
-.ilabel{color:var(--muted);min-width:160px;flex-shrink:0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.3px;padding-top:2px}
-.ival{color:var(--ink);font-weight:500;flex:1}
-.ival a{color:var(--teal);font-weight:600}
-.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
-.tag-gold{background:#fef9c3;color:#854d0e}
-.tag-blue{background:#dbeafe;color:#1d4ed8}
-.tag-green{background:#dcfce7;color:#166534}
-.tag-red{background:#fee2e2;color:#991b1b}
-.tag-gray{background:#f3f4f6;color:#4b5563}
-.tag-purple{background:#ede9fe;color:#5b21b6}
+.card{background:#fff;border:1px solid #e8e8e6;border-radius:12px;padding:16px 20px;margin-bottom:14px}
+.card-title{font-size:10px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid #f0f0ee;font-size:13px;gap:12px}
+.row:last-child{border-bottom:none}
+.rl{color:#888;flex-shrink:0;min-width:110px}
+.rv{color:#111;text-align:right;line-height:1.5}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:500;white-space:nowrap}
+.bg{background:#dcfce7;color:#166534}
+.bb{background:#dbeafe;color:#1d4ed8}
+.ba{background:#fef9c3;color:#854d0e}
+.bgr{background:#f3f4f6;color:#374151}
+.br{background:#fee2e2;color:#991b1b}
 
-/* CONTACTS BLOCK */
-.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px}
-.contact-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px}
-.contact-name{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:2px}
-.contact-role{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px}
-.contact-line{font-size:13px;color:#333;display:flex;align-items:center;gap:6px;margin-bottom:3px}
-
-/* PRICING TABLE */
-.price-section{margin-bottom:20px}
-.price-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:10px;padding:8px 12px;background:var(--bg-blue);border-radius:8px;border-left:4px solid var(--teal)}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:12px}
-.pcard{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px}
-.pcard-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:8px}
-.pcard-main{font-size:22px;font-weight:700;color:var(--navy)}
-.pcard-sub{font-size:11px;color:var(--muted);margin-top:2px}
-.pcard-rows{font-size:12px;color:#444;line-height:2}
-.pcard-rows strong{color:var(--navy)}
-.price-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:7px;text-decoration:none;transition:.2s}
-.price-link:hover{background:var(--teal);text-decoration:none}
-.price-link.green{background:#16a34a}
-.price-link.green:hover{background:#15803d}
-.price-link.gold{background:var(--orange)}
+/* CONTACTS GRID */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:14px}
+.ccard{background:#fff;border:1px solid #e8e8e6;border-radius:11px;padding:14px 16px}
+.cc-name{font-size:13px;font-weight:600;color:#111;margin-bottom:2px}
+.cc-role{font-size:11px;color:#888;margin-bottom:8px}
+.cc-row{font-size:12px;color:#444;padding:2px 0}
+.cc-row a{color:#1d4ed8}
 
 /* PRODUCTS */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
-.prod-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 20px;border-left:4px solid var(--teal)}
-.prod-card.gold{border-left-color:var(--gold)}
-.prod-card.green{border-left-color:#16a34a}
-.prod-card.purple{border-left-color:#7c3aed}
-.prod-card.red{border-left-color:var(--red)}
-.prod-card.orange{border-left-color:var(--orange)}
-.prod-title{font-weight:700;font-size:14px;color:var(--navy);margin:8px 0 6px}
-.prod-info{font-size:12px;color:#555;line-height:1.7}
-.prod-info strong{color:var(--ink)}
-.prod-links{margin-top:10px;display:flex;flex-direction:column;gap:4px}
-.prod-links a{font-size:11px;color:var(--teal);font-weight:600}
-.close-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:6px 14px;border-radius:6px;font-size:11px;font-weight:700;text-decoration:none;transition:.2s;color:#fff;background:var(--navy)}
-.close-btn:hover{background:var(--teal);text-decoration:none}
-.close-btn.green{background:#16a34a}
-.close-btn.purple{background:#7c3aed}
-.close-btn.red{background:var(--red)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:14px}
+.pcard{background:#fff;border:1px solid #e8e8e6;border-radius:11px;padding:14px 16px}
+.phead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:7px}
+.ptitle{font-size:13px;font-weight:600;color:#111}
+.pdesc{font-size:12px;color:#555;line-height:1.6;margin-bottom:9px}
+.plink{display:block;font-size:12px;color:#1d4ed8;padding:2px 0}
+.plink:hover{text-decoration:underline}
 
-/* TICKETS BOX */
-.tickets-box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}
-.tickets-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.ticket-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #f0ede7;font-size:13px}
-.ticket-row:last-child{border:none}
-.ticket-show{flex:1;font-weight:600;color:var(--navy)}
-.ticket-info{font-size:11px;color:var(--muted)}
-.ticket-price{font-weight:700;color:var(--orange);min-width:70px;text-align:right}
-.ticket-btn{background:var(--navy);color:#fff;padding:5px 12px;border-radius:5px;font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap;transition:.2s}
-.ticket-btn:hover{background:var(--teal);text-decoration:none}
+/* TICKETS */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:9px;margin-bottom:14px}
+.tcard{background:#fff;border:1px solid #e8e8e6;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
+.tt{font-size:13px;font-weight:600;color:#111}
+.tm{font-size:11px;color:#888;line-height:1.5}
+.tp{font-size:13px;font-weight:600;color:#1d4ed8}
+.tbtn{display:block;text-align:center;padding:7px 0;background:#111;color:#fff;border-radius:7px;font-size:12px;font-weight:500}
+.tbtn:hover{background:#333}
+
+/* PRICING */
+.pricegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin-bottom:12px}
+.pricecard{background:#fff;border:1px solid #e8e8e6;border-radius:10px;padding:14px 16px}
+.price-title{font-size:11px;font-weight:600;color:#555;margin-bottom:8px}
+.price-row{font-size:12px;color:#444;padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid #f5f5f3}
+.price-row:last-child{border-bottom:none}
+.price-val{font-weight:600;color:#111}
+
+/* TABS */
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.tab{padding:6px 13px;font-size:12px;border:1px solid #ddd;border-radius:7px;background:#fff;color:#666;cursor:pointer;font-family:inherit;transition:all .13s}
+.tab:hover{background:#f0f0ee}
+.tab.on{background:#111;color:#fff;border-color:#111;font-weight:500}
+.tab-sm{padding:5px 11px;font-size:11px;border-radius:20px}
+.panel{display:none}
+.panel.on{display:block}
 
 /* SCRIPTS */
-.script-box{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
-.script-head{background:var(--navy);color:#fff;padding:11px 18px;font-size:12px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.sbadge{background:rgba(255,255,255,.15);padding:2px 10px;border-radius:4px;font-size:10px;font-weight:400}
-.script-body{padding:16px 18px}
-.role{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;margin-right:6px;flex-shrink:0}
-.rus{background:#dbeafe;color:#1d4ed8}
-.rcl{background:#fef9c3;color:#854d0e}
-.sline{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
-.stext{font-size:13px;color:#333;line-height:1.65;flex:1;background:var(--bg-gray);padding:9px 13px;border-radius:7px;border-left:3px solid var(--teal)}
-.stext.cl{border-left-color:var(--gold);background:var(--bg-yellow)}
-.link-block{background:var(--bg-blue);border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;margin-top:10px}
-.link-block strong{display:block;color:#1e3a5f;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.link-block a{color:#2563eb;font-weight:600;display:block;margin-bottom:3px;font-size:12px}
-.close-action{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;border:none;padding:8px 18px;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-top:12px;text-decoration:none;transition:.2s}
-.close-action:hover{background:var(--teal);text-decoration:none}
-.close-action.green{background:#16a34a}
-.close-action.orange{background:var(--orange)}
-.close-action.red{background:var(--red)}
+.sblock{background:#fff;border:1px solid #e8e8e6;border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.slabel{font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.stitle{font-size:14px;font-weight:600;color:#111;margin-bottom:14px}
+.exchange{display:flex;flex-direction:column;gap:9px}
+.line{display:flex;gap:10px;align-items:flex-start}
+.spk{font-size:11px;font-weight:600;min-width:68px;text-align:right;padding-top:10px;flex-shrink:0}
+.spk-e{color:#1d4ed8}
+.spk-s{color:#166534}
+.bubble{flex:1;padding:10px 13px;border-radius:0 8px 8px 8px;font-size:13px;line-height:1.75;color:#1a1a1a;cursor:pointer;position:relative}
+.be{background:#eff6ff;border-left:2px solid #3b82f6}
+.bs{background:#f0fdf4;border-left:2px solid #4ade80}
+.bubble:hover::after{content:'✏️ διπλό κλικ';position:absolute;top:4px;right:8px;font-size:10px;color:#aaa}
+.bubble[contenteditable="true"]{outline:2px solid #3b82f6;cursor:text}
+.edit-actions{display:none;gap:6px;margin-top:6px;padding:0 0 4px 0}
+.edit-actions.show{display:flex}
+.ea{padding:4px 12px;font-size:11px;border:1px solid #ddd;border-radius:6px;cursor:pointer;font-family:inherit;background:#fff;transition:all .12s}
+.ea-save{background:#111;color:#fff;border-color:#111}
+.ea-save:hover{background:#333}
+.ea-cancel:hover{background:#fee2e2;border-color:#fca5a5;color:#991b1b}
+.tip-box{background:#fef9c3;border-radius:8px;padding:9px 13px;font-size:12px;color:#854d0e;margin-top:12px;line-height:1.6}
+.warn-box{background:#f9f9f7;border-radius:8px;padding:9px 13px;font-size:12px;color:#666;margin-top:7px;line-height:1.6;border-left:2px solid #e0e0de}
+.slinks{margin-top:12px;padding-top:12px;border-top:1px solid #f0f0ee;display:flex;flex-wrap:wrap;gap:5px}
+.lp{display:inline-block;padding:4px 10px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:20px;font-size:11px;color:#374151}
+.lp:hover{background:#e5e7eb}
 
 /* EMAILS */
-.email-box{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
-.email-meta{background:var(--bg-gray);padding:11px 18px;border-bottom:1px solid var(--border);font-size:12px;color:var(--muted)}
-.email-meta strong{color:var(--ink)}
-.email-body{padding:18px;font-size:12.5px;color:#333;line-height:1.85;font-family:monospace;white-space:pre-wrap}
+.ecard{background:#fff;border:1px solid #e8e8e6;border-radius:12px;overflow:hidden;margin-bottom:12px}
+.emeta{padding:12px 18px;border-bottom:1px solid #f0f0ee;display:flex;flex-direction:column;gap:4px}
+.emr{display:flex;gap:8px;font-size:12px;align-items:baseline}
+.eml{color:#aaa;min-width:50px;flex-shrink:0;font-weight:600;font-size:11px;text-transform:uppercase}
+.emv{color:#444}
+.ems{color:#111;font-weight:600;font-size:13px}
+.ebody{padding:16px 20px;font-size:13px;color:#333;line-height:1.8;white-space:pre-wrap}
+.elinks-bar{padding:10px 18px;border-top:1px solid #f0f0ee;display:flex;flex-wrap:wrap;gap:5px}
+.copy-btn{display:block;margin:8px 18px 14px;width:fit-content;padding:7px 16px;font-size:12px;border:1px solid #ddd;border-radius:7px;background:#fff;color:#555;cursor:pointer;font-family:inherit;transition:all .12s}
+.copy-btn:hover{background:#111;color:#fff;border-color:#111}
 
 /* OBJECTIONS */
-.obj{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
-.obj-q{background:var(--bg-red);padding:11px 16px;font-weight:600;font-size:13px;color:#991b1b;display:flex;gap:10px}
-.obj-q::before{content:'❓';flex-shrink:0}
-.obj-a{padding:11px 16px;background:var(--bg-green);font-size:13px;color:#166534;display:flex;gap:10px}
-.obj-a::before{content:'✅';flex-shrink:0}
+.obj{background:#fff;border:1px solid #e8e8e6;border-radius:10px;padding:13px 16px;margin-bottom:9px}
+.obj-q{font-size:13px;font-weight:600;color:#111;margin-bottom:5px}
+.obj-a{font-size:13px;color:#444;line-height:1.6}
 
-/* PROCESS STEPS */
-.step{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--border)}
-.step:last-child{border:none}
-.step-n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.step-t{font-weight:600;font-size:14px;color:var(--navy);margin-bottom:3px}
-.step-d{font-size:13px;color:#555;line-height:1.6}
+/* PROCESS */
+.ps{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid #f0f0ee;align-items:flex-start}
+.ps:last-child{border-bottom:none}
+.psnum{width:26px;height:26px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.psm{font-size:13px;font-weight:600;color:#111}
+.pss{font-size:12px;color:#888;margin-top:2px;line-height:1.45}
 
-/* EDIT SECTION */
-.edit-section{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:14px}
-.edit-sec-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.edit-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
-.edit-label{font-size:12px;color:var(--muted);min-width:130px;flex-shrink:0;font-weight:500;padding-top:8px}
-.edit-input{flex:1;border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:13px;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fafaf9;transition:.15s}
-.edit-input:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px rgba(46,117,182,.1)}
-.edit-textarea{width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:13px;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fafaf9;resize:vertical;min-height:70px}
-.edit-textarea:focus{outline:none;border-color:var(--teal);background:#fff}
-[contenteditable="true"]{cursor:text;outline:none;min-height:20px}
-[contenteditable="true"]:focus{background:rgba(46,117,182,.04);border-radius:4px}
-.add-btn-sm{font-size:12px;color:var(--teal);background:var(--bg-blue);border:1px dashed var(--teal);padding:5px 14px;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.15s}
-.add-btn-sm:hover{background:#dbeafe}
-.del-x{color:#ddd;font-size:18px;cursor:pointer;background:none;border:none;line-height:1;flex-shrink:0;transition:.15s;padding:6px 4px}
-.del-x:hover{color:var(--red)}
-.save-bar{display:flex;gap:10px;margin-top:16px;align-items:center}
-.save-btn{background:var(--navy);color:#fff;border:none;padding:8px 20px;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
-.save-btn:hover{background:var(--teal)}
-.save-ok{font-size:12px;color:var(--green)}
+/* SHARED */
+.shared-entry{background:#f9f9f7;border-radius:8px;padding:9px 13px;font-size:13px;color:#333;margin-bottom:5px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;line-height:1.5}
+.entry-meta{font-size:11px;color:#aaa;margin-top:2px}
+.del-btn{font-size:12px;color:#ccc;cursor:pointer;flex-shrink:0;background:none;border:none;padding:0;font-family:inherit}
+.del-btn:hover{color:#e53e3e}
+.add-area{margin-top:12px}
+.add-ta{width:100%;border:1px solid #e0e0de;border-radius:8px;padding:9px 12px;font-size:13px;color:#333;font-family:inherit;background:#fff;resize:vertical;min-height:60px}
+.add-ta:focus{outline:none;border-color:#999}
+.add-btn{margin-top:7px;padding:6px 16px;font-size:12px;border:1px solid #ccc;border-radius:7px;background:#fff;color:#333;cursor:pointer;font-family:inherit;transition:all .13s}
+.add-btn:hover{background:#111;color:#fff;border-color:#111}
+.name-inp{border:1px solid #e0e0de;border-radius:6px;padding:5px 10px;font-size:12px;font-family:inherit;color:#333;width:200px;margin-bottom:6px}
+.name-inp:focus{outline:none;border-color:#999}
 
-/* HIGHLIGHT */
-.hl{background:var(--bg-yellow);border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#5c4a1e;margin:12px 0;line-height:1.6}
-.info-box{background:var(--bg-blue);border-left:4px solid var(--teal);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#1d4ed8;margin:12px 0}
-.warn-box{background:var(--bg-red);border-left:4px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#991b1b;margin:12px 0}
-
-@media(max-width:640px){
-  .cover{padding:36px 20px 32px}
-  .cover-title{font-size:30px}
-  .nav a{padding:10px 12px;font-size:10px}
-  .main{padding:20px 14px}
-  .prod-grid,.price-grid,.contacts-grid{grid-template-columns:1fr}
-}
+.alert-box{background:#fef9c3;border-radius:8px;padding:11px 15px;font-size:13px;color:#854d0e;margin-top:14px;line-height:1.5}
+.info-box{background:#eff6ff;border-radius:8px;padding:10px 14px;font-size:12px;color:#1d4ed8;margin-bottom:14px;line-height:1.5}
+.loading-msg{font-size:13px;color:#aaa;padding:10px 0;text-align:center}
+.footer{text-align:center;font-size:11px;color:#bbb;margin-top:40px;padding:20px 0}
+@media(max-width:600px){.cgrid,.pgrid,.tgrid,.pricegrid,.hgrid{grid-template-columns:1fr}.rl{min-width:80px}}
 </style>
 </head>
 <body>
 
-<!-- COVER -->
-<div class="cover">
-  <div class="cover-btns no-print">
-    <button class="cbtn" onclick="window.print()">🖨 Εκτύπωση</button>
-    <button class="cbtn" onclick="exportJSON()">💾 Αποθήκευση</button>
+<div class="top-bar">
+  <div class="logo">ΜΕ</div>
+  <div>
+    <div class="brand-name">Μορφές Έκφρασης</div>
+    <div class="brand-sub">Sales Manual 2026 · morfesekfrasis.gr</div>
   </div>
-  <div class="cover-brand">Μορφές <span>Έκφρασης</span></div>
-  <div class="cover-sub">morfesekfrasis.gr · Αλκμήνης 13, Κ. Πετράλωνα</div>
-  <div class="cover-title">Sales Manual<br>& Οδηγός Πωλήσεων</div>
-  <div class="cover-meta">
-    <div class="meta-i"><strong>Θωμάς Κινδύνης</strong><span>Ιδρυτής · 6977222688</span></div>
-    <div class="meta-i"><strong>Άννα Σ. Τζίμα</strong><span>Σκηνοθέτης · 697 661 1460</span></div>
-    <div class="meta-i"><strong>Μαρία Τζίμα</strong><span>Γραμματεία · 210-3464903</span></div>
-    <div class="meta-i"><strong>ΑΦΜ</strong><span>801656351</span></div>
-    <div class="meta-i"><strong>Ενημερώθηκε</strong><span id="updateDate">—</span></div>
+  <div class="top-right">
+    <div class="sync-pill"><span class="sync-dot" id="sync-dot"></span><span id="sync-status">Σύνδεση...</span></div>
+    <button class="top-btn" onclick="window.print()">🖨 Εκτύπωση</button>
   </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav no-print">
-  <a href="#contacts" class="active">Επαφές</a>
-  <a href="#products">Παραστάσεις</a>
-  <a href="#tickets">Εισιτήρια</a>
-  <a href="#pricing">Τιμοκατάλογος</a>
-  <a href="#scripts">Scripts</a>
-  <a href="#emails">Emails</a>
-  <a href="#objections">Αντιρρήσεις</a>
-  <a href="#process">Διαδικασία</a>
-  <a href="#edit">✏️ Επεξεργασία</a>
-</nav>
+<div class="container">
 
-<div class="main">
-
-<!-- ── ΕΠΑΦΕΣ ─────────────────────────────────────────────────────────── -->
-<section class="section" id="contacts">
-  <div class="sec-hd"><span class="sec-title">Βασικές Επαφές</span></div>
-  <p class="sec-desc">Ποιος κάνει τι — πρώτο πράγμα που κοιτάς</p>
-
-  <div class="contacts-grid">
-    <div class="contact-card">
-      <div class="contact-name">Θωμάς Κινδύνης</div>
-      <div class="contact-role">Ιδρυτής & Διευθυντής</div>
-      <div class="contact-line">📞 <a href="tel:6977222688">6977222688</a></div>
-      <div class="contact-line">✉️ <a href="mailto:kindinisthomas@yahoo.gr">kindinisthomas@yahoo.gr</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-name">Άννα Σεβαστή Τζίμα</div>
-      <div class="contact-role">Σκηνοθέτης & Δημιουργός</div>
-      <div class="contact-line">📞 <a href="tel:6976611460">697 661 1460</a></div>
-      <div class="contact-line">✉️ <a href="mailto:info@morfesekfrasis.gr">info@morfesekfrasis.gr</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-name">Μαρία Τζίμα</div>
-      <div class="contact-role">Γραμματεία (σταθερό)</div>
-      <div class="contact-line">📞 <a href="tel:2103464903">210-3464903</a></div>
-      <div class="contact-line">📞 <a href="tel:2103464002">210-3464002</a></div>
-      <div class="contact-line">✉️ <a href="mailto:morfesconnect@gmail.com">morfesconnect@gmail.com</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-name">Θέατρο</div>
-      <div class="contact-role">Αλκμήνης 13, Κ. Πετράλωνα 118 54</div>
-      <div class="contact-line">🌐 <a href="https://morfesekfrasis.gr" target="_blank">morfesekfrasis.gr</a></div>
-      <div class="contact-line">💳 IBAN: GR21 0140 5660 5660 0200 2000 021</div>
-      <div class="contact-line">🏦 Alpha Bank | ΑΦΜ: 801656351</div>
-    </div>
+  <!-- HEADER STATS -->
+  <div class="hgrid">
+    <div class="hcard"><div class="hcard-label">Ιδρυτής</div><div class="hcard-val">Θωμάς Κινδύνης</div><div class="hcard-sub">Σκηνοθέτης · 6977222688</div></div>
+    <div class="hcard"><div class="hcard-label">Σκηνοθέτης</div><div class="hcard-val">Άννα Σ. Τζίμα</div><div class="hcard-sub">697 661 1460</div></div>
+    <div class="hcard"><div class="hcard-label">Γραμματεία</div><div class="hcard-val">Μαρία Τζίμα</div><div class="hcard-sub">210-3464903</div></div>
+    <div class="hcard"><div class="hcard-label">Email</div><div class="hcard-val">morfesconnect</div><div class="hcard-sub">@gmail.com</div></div>
+    <div class="hcard"><div class="hcard-label">ΑΦΜ</div><div class="hcard-val">801656351</div><div class="hcard-sub">ΚΕΦΟΔΕ ΑΤΤΙΚΗΣ</div></div>
+    <div class="hcard"><div class="hcard-label">IBAN</div><div class="hcard-val" style="font-size:11px">GR21 0140 5660 5660 0200 2000 021</div><div class="hcard-sub">Alpha Bank</div></div>
   </div>
-</section>
 
-<div class="sep"></div>
-
-<!-- ── ΠΑΡΑΣΤΑΣΕΙΣ ────────────────────────────────────────────────────── -->
-<section class="section" id="products">
-  <div class="sec-hd"><span class="sec-title">Παραστάσεις & Προγράμματα</span></div>
-  <p class="sec-desc">Τι παίζεται τώρα — ηλικίες, πρόγραμμα, πού γίνεται, links</p>
-
-  <div class="warn-box">⚠️ Οι παραστάσεις γίνονται <strong>στο θέατρο Αλκμήνης 13</strong> — τα σχολεία/νηπιαγωγεία έρχονται εκεί. Η επιλογή «παράσταση-βαλίτσα» σημαίνει ότι πηγαίνουμε εμείς στον χώρο τους.</div>
-
-  <div class="prod-grid">
-
-    <div class="prod-card gold">
-      <div class="tag tag-gold">☀️ Προτεραιότητα #1</div>
-      <div class="prod-title">Summer Camp 2026 — Παιδιά (4–11 ετών)</div>
-      <div class="prod-info">
-        <strong>Που:</strong> Βοτανικός Κήπος Διομήδους<br>
-        <strong>Πότε:</strong> 15 Ιουνίου – 31 Ιουλίου 2026<br>
-        <strong>Ώρες:</strong> 08:00–16:00<br>
-        <strong>Τιμές:</strong> από 107€/εβδ. (Early Bird έως 1/6) — δες Τιμοκατάλογο
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html" target="_blank">→ Πλήρης πληροφορία Camp</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html" target="_blank">→ Τιμές & Πακέτα</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/sixnes-erotiseis-summer-camp-26.html" target="_blank">→ Συχνές Ερωτήσεις</a>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
-        <a class="close-btn green" href="https://forms.gle/kbXy32ykr7W67Yre6" target="_blank">✅ Εγγραφή Παιδιών 4–11</a>
-        <a class="close-btn" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis-eggrafes.html" target="_blank">📋 Σελίδα Εγγραφών</a>
-      </div>
-    </div>
-
-    <div class="prod-card gold">
-      <div class="tag tag-gold">☀️ Προτεραιότητα #1</div>
-      <div class="prod-title">Summer Camp 2026 — Έφηβοι (12–17 ετών)</div>
-      <div class="prod-info">
-        <strong>Α. Ακαδημία Θεάτρου (5ο Master Class):</strong> 22/6–3/7 | 320€ early bird<br>
-        <strong>Β. Master Class Κινηματογράφου (4ο):</strong> Ιούλιος | 320€ early bird<br>
-        <strong>Γ. Καλοκαίρι με Τέχνες:</strong> ανά εβδ. από 16/6 | από 107€
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26.html" target="_blank">→ Όλα τα εφηβικά προγράμματα</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-13-17-summrer-camp-theatro.html" target="_blank">→ Ακαδημία Θεάτρου</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html" target="_blank">→ Κινηματογράφος</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-kalokairimetexni-morfesekfrasis26.html" target="_blank">→ Καλοκαίρι με Τέχνες</a>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
-        <a class="close-btn green" href="https://forms.gle/rKfWPtr9MGzSZ72GA" target="_blank">✅ Εγγραφή Εφήβων 12+</a>
-        <a class="close-btn" href="https://forms.gle/2Qe5kfZdZZUwNbLk7" target="_blank">📋 Ακαδημία Θεάτρου</a>
-      </div>
-    </div>
-
-    <div class="prod-card">
-      <div class="tag tag-blue">Παίζεται Τώρα · Κυριακή 11:00</div>
-      <div class="prod-title">🧸 Κού-Κου! Μια Βολτά στο Δάσος</div>
-      <div class="prod-info">
-        <strong>Ηλικίες:</strong> 18 μηνών – 5 ετών | <strong>Διάρκεια:</strong> 50′<br>
-        <strong>Πού:</strong> Θέατρο Αλκμήνης 13 (τα σχολεία/νηπ. έρχονται εδώ)<br>
-        <strong>Επίσης:</strong> παράσταση-βαλίτσα στον χώρο σας κατόπιν συνεννόησης<br>
-        <em>Θέμα: φύση, φιλία, περιβάλλον</em>
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html" target="_blank">→ Παραστάσεις Νηπιαγωγεία</a>
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance.html" target="_blank">→ Παραστάσεις Παιδικοί Σταθμοί</a>
-        <a href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el" target="_blank">→ Εισιτήρια TicketServices</a>
-      </div>
-      <a class="close-btn green" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el" target="_blank">🎟 Κλείσε θέση τώρα</a>
-    </div>
-
-    <div class="prod-card">
-      <div class="tag tag-blue">Παίζεται Τώρα · Κυριακή 18:00</div>
-      <div class="prod-title">🐉 Ο Δράκος των Χρωμάτων</div>
-      <div class="prod-info">
-        <strong>Ηλικίες:</strong> 3–7 ετών | <strong>Διάρκεια:</strong> 60′<br>
-        <strong>Πού:</strong> Θέατρο Αλκμήνης 13 (τα σχολεία έρχονται εδώ)<br>
-        <strong>Επίσης:</strong> παράσταση-βαλίτσα στον χώρο σας<br>
-        <em>Θέμα: διαφορετικότητα & αποδοχή</em>
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html" target="_blank">→ Παραστάσεις Δημοτικό</a>
-        <a href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el" target="_blank">→ Εισιτήρια TicketServices</a>
-      </div>
-      <a class="close-btn green" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el" target="_blank">🎟 Κλείσε θέση τώρα</a>
-    </div>
-
-    <div class="prod-card">
-      <div class="tag tag-blue">Παίζεται Τώρα · Κυριακή 12:30</div>
-      <div class="prod-title">🏴‍☠️ Ο Πειρατής Μπου!</div>
-      <div class="prod-info">
-        <strong>Ηλικίες:</strong> 3,5–9 ετών | <strong>Διάρκεια:</strong> 60′<br>
-        <strong>Πού:</strong> Θέατρο Αλκμήνης 13 (από 26 Απριλίου)<br>
-        <strong>Επίσης:</strong> παράσταση-βαλίτσα στον χώρο σας<br>
-        <em>Θέμα: αυτοπεποίθηση & θαλάσσιο περιβάλλον</em>
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html" target="_blank">→ Παραστάσεις Δημοτικό</a>
-        <a href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el" target="_blank">→ Εισιτήρια TicketServices</a>
-      </div>
-      <a class="close-btn green" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el" target="_blank">🎟 Κλείσε θέση τώρα</a>
-    </div>
-
-    <div class="prod-card">
-      <div class="tag tag-blue">Παίζεται Τώρα · Σάββατο 18:00</div>
-      <div class="prod-title">🔔 Το Παιδί και το Κουδουνάκι</div>
-      <div class="prod-info">
-        <strong>Ηλικίες:</strong> 3,5–8 ετών | <strong>Διάρκεια:</strong> 60′<br>
-        <strong>Πού:</strong> Θέατρο Αλκμήνης 13<br>
-        <strong>Τιμές:</strong> 10€ γενική | 8€ παιδί/μειωμένο<br>
-        <em>Σύστημα Carl Orff | Κατάλληλο και για υπαίθριους χώρους</em>
-      </div>
-      <div class="prod-links">
-        <a href="https://www.ticketservices.gr/event/to-paidi-kai-to-koudounaki-2026/?lang=el" target="_blank">→ Εισιτήρια TicketServices</a>
-      </div>
-      <a class="close-btn green" href="https://www.ticketservices.gr/event/to-paidi-kai-to-koudounaki-2026/?lang=el" target="_blank">🎟 Αγορά Εισιτηρίων</a>
-    </div>
-
-    <div class="prod-card orange">
-      <div class="tag" style="background:#fef3c7;color:#92400e">Εκπαιδευτικά</div>
-      <div class="prod-title">🏫 Εκπαιδευτικά Προγράμματα & Εργαστήρια</div>
-      <div class="prod-info">
-        <strong>Για:</strong> Παιδικοί σταθμοί, νηπιαγωγεία, δημοτικά, γυμνάσια<br>
-        <strong>Θεατρικά εργαστήρια:</strong> Προνήπιο → Λύκειο<br>
-        <strong>Teens Theatre Club:</strong> Β' Γυμν.–Λύκειο+<br>
-        <strong>Δημιουργία & Έκφραση:</strong> όλο το πρόγραμμα εργαστηρίων
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html" target="_blank">→ Εκπαιδευτικά Προγράμματα</a>
-        <a href="https://morfesekfrasis.gr/paidi-kai-texni/theatrika-ergastiria-olotoprogramma-morfesekfrasis25.html" target="_blank">→ Δημιουργία & Έκφραση στη Σκηνή (πλήρες πρόγραμμα)</a>
-        <a href="https://morfesekfrasis.gr/paidi-kai-texni/efiko-theatrikoergastiri-morfesekfrasis25.html" target="_blank">→ Teens Theatre Club</a>
-      </div>
-      <a class="close-btn orange" href="mailto:morfesconnect@gmail.com?subject=Ενδιαφέρον%20Εκπαιδευτικά%20Προγράμματα" target="_blank">✉️ Επικοινωνία</a>
-    </div>
-
-    <div class="prod-card purple">
-      <div class="tag tag-purple">Νέα Σεζόν</div>
-      <div class="prod-title">🎬 Εργαστήρια Ενηλίκων</div>
-      <div class="prod-info">
-        18+ | Εβδομαδιαία | Θέατρο Αλκμήνης 13<br>
-        Team building για εταιρείες | Νέες παραστάσεις ενηλίκων
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/argastiria-enilikes-morfesekfrasis-2025.html" target="_blank">→ Εργαστήρια Ενηλίκων</a>
-      </div>
-      <a class="close-btn purple" href="mailto:morfesconnect@gmail.com?subject=Ενδιαφέρον%20Εργαστήρια%20Ενηλίκων" target="_blank">✉️ Επικοινωνία</a>
-    </div>
-
-    <div class="prod-card red">
-      <div class="tag tag-red">❤️ Κοινωνικό</div>
-      <div class="prod-title">❤️ Υποτροφίες & Χορηγίες</div>
-      <div class="prod-info">
-        Παιδιά ευάλωτων οικογενειών · από 107€/παιδί/εβδ.<br>
-        Δωρεές: μουσικά όργανα, υποδομή, γενική
-      </div>
-      <div class="prod-links">
-        <a href="https://morfesekfrasis.gr/dorees.html" target="_blank">→ Σελίδα Δωρεών</a>
-        <a href="https://morfesekfrasis.gr/filoi-ton-morfon-ekfrasis/xorigoi.html" target="_blank">→ Χορηγοί</a>
-      </div>
-      <a class="close-btn red" href="mailto:morfesconnect@gmail.com?subject=Πρόταση%20Χορηγίας%20Μορφές%20Έκφρασης" target="_blank">✉️ Πρόταση Χορηγίας</a>
-    </div>
-
+  <!-- MAIN NAV -->
+  <div class="main-nav">
+    <button class="mnav on" onclick="showSec('contacts',this)">Επαφές</button>
+    <button class="mnav" onclick="showSec('products',this)">Παραστάσεις</button>
+    <button class="mnav" onclick="showSec('tickets',this)">Εισιτήρια</button>
+    <button class="mnav" onclick="showSec('pricing',this)">Τιμοκατάλογος</button>
+    <button class="mnav" onclick="showSec('scripts',this)">Scripts</button>
+    <button class="mnav" onclick="showSec('emails',this)">Emails</button>
+    <button class="mnav" onclick="showSec('objections',this)">Αντιρρήσεις</button>
+    <button class="mnav" onclick="showSec('process',this)">Διαδικασία</button>
+    <button class="mnav" onclick="showSec('shared',this)">🔄 Κοινά</button>
   </div>
-</section>
 
-<div class="sep"></div>
-
-<!-- ── ΕΙΣΙΤΗΡΙΑ ──────────────────────────────────────────────────────── -->
-<section class="section" id="tickets">
-  <div class="sec-hd"><span class="sec-title">Εισιτήρια — Κλείσε Θέση Τώρα</span></div>
-  <p class="sec-desc">Πάτα απευθείας για να οδηγήσεις τον πελάτη στην αγορά εισιτηρίου</p>
-
-  <div class="tickets-box">
-    <div class="tickets-title">🎭 Παραστάσεις στο Θέατρο Αλκμήνης 13 — Εισιτήρια μέσω TicketServices</div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">🧸 Κού-Κου! Μια Βολτά στο Δάσος</div>
-        <div class="ticket-info">Κυριακή 11:00 · 18μ–5ετ · 50′</div>
-      </div>
-      <div class="ticket-price">10€ / 8€</div>
-      <a class="ticket-btn" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el" target="_blank">🎟 Εισιτήρια</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">🐉 Ο Δράκος των Χρωμάτων</div>
-        <div class="ticket-info">Κυριακή 18:00 · 3–7ετ · 60′</div>
-      </div>
-      <div class="ticket-price">10€ / 8€</div>
-      <a class="ticket-btn" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el" target="_blank">🎟 Εισιτήρια</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">🏴‍☠️ Ο Πειρατής Μπου!</div>
-        <div class="ticket-info">Κυριακή 12:30 · 3,5–9ετ · 60′ · από 26/4</div>
-      </div>
-      <div class="ticket-price">10€ / 8€</div>
-      <a class="ticket-btn" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el" target="_blank">🎟 Εισιτήρια</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">🔔 Το Παιδί και το Κουδουνάκι</div>
-        <div class="ticket-info">Σάββατο 18:00 · 3,5–8ετ · 60′</div>
-      </div>
-      <div class="ticket-price">10€ / 8€</div>
-      <a class="ticket-btn" href="https://www.ticketservices.gr/event/to-paidi-kai-to-koudounaki-2026/?lang=el" target="_blank">🎟 Εισιτήρια</a>
+  <!-- ═══════════ ΕΠΑΦΕΣ ═══════════ -->
+  <div id="contacts" class="sec on">
+    <div class="cgrid">
+      <div class="ccard"><div class="cc-name">Θωμάς Κινδύνης</div><div class="cc-role">Ιδρυτής &amp; Διευθυντής</div><div class="cc-row">📞 <a href="tel:6977222688">6977222688</a></div><div class="cc-row">✉️ <a href="mailto:kindinisthomas@yahoo.gr">kindinisthomas@yahoo.gr</a></div></div>
+      <div class="ccard"><div class="cc-name">Άννα Σεβαστή Τζίμα</div><div class="cc-role">Σκηνοθέτης &amp; Δημιουργός</div><div class="cc-row">📞 <a href="tel:6976611460">697 661 1460</a></div><div class="cc-row">✉️ <a href="mailto:info@morfesekfrasis.gr">info@morfesekfrasis.gr</a></div></div>
+      <div class="ccard"><div class="cc-name">Μαρία Τζίμα</div><div class="cc-role">Γραμματεία</div><div class="cc-row">📞 <a href="tel:2103464903">210-3464903</a></div><div class="cc-row">📞 <a href="tel:2103464002">210-3464002</a></div><div class="cc-row">✉️ <a href="mailto:morfesconnect@gmail.com">morfesconnect@gmail.com</a></div></div>
+      <div class="ccard"><div class="cc-name">Θέατρο</div><div class="cc-role">Αλκμήνης 13, Κ. Πετράλωνα 118 54</div><div class="cc-row">🌐 <a href="https://morfesekfrasis.gr" style="color:#1d4ed8">morfesekfrasis.gr</a></div><div class="cc-row" style="font-size:11px;color:#888;margin-top:4px">fb: morfesekfrasis.gr · ig: @morfesekfrasis</div></div>
     </div>
   </div>
 
-  <div class="tickets-box">
-    <div class="tickets-title">☀️ Summer Camp 2026 — Φόρμες Εγγραφής</div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">Παιδιά 4–11 ετών</div>
-        <div class="ticket-info">15/6–31/7 · Βοτανικός Κήπος · 08:00–16:00</div>
-      </div>
-      <div class="ticket-price">από 107€/εβδ.</div>
-      <a class="ticket-btn" href="https://forms.gle/kbXy32ykr7W67Yre6" target="_blank">📋 Εγγραφή</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">Έφηβοι 12+ — Καλοκαίρι με Τέχνες</div>
-        <div class="ticket-info">από 16/6 · ανά εβδομάδα</div>
-      </div>
-      <div class="ticket-price">από 107€/εβδ.</div>
-      <a class="ticket-btn" href="https://forms.gle/rKfWPtr9MGzSZ72GA" target="_blank">📋 Εγγραφή</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">Έφηβοι 13–17 — Ακαδημία Θεάτρου</div>
-        <div class="ticket-info">22/6–3/7 · 5ο Master Class</div>
-      </div>
-      <div class="ticket-price">320€ early</div>
-      <a class="ticket-btn" href="https://forms.gle/2Qe5kfZdZZUwNbLk7" target="_blank">📋 Εγγραφή</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">Έφηβοι 13–17 — Κινηματογράφος</div>
-        <div class="ticket-info">Ιούλιος · 4ο Master Class</div>
-      </div>
-      <div class="ticket-price">320€ early</div>
-      <a class="ticket-btn" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html" target="_blank">📋 Πληροφορίες</a>
-    </div>
-    <div class="ticket-row">
-      <div>
-        <div class="ticket-show">Πούλμαν</div>
-        <div class="ticket-info">Μεταφορά προς/από Βοτανικό Κήπο</div>
-      </div>
-      <div class="ticket-price">80€/εβδ.</div>
-      <a class="ticket-btn" href="https://docs.google.com/forms/d/1mueRveLMbF0PkVFT41v6PVHG6rhuLDitwVcKe6fKVuc/edit" target="_blank">📋 Αίτηση</a>
+  <!-- ═══════════ ΠΑΡΑΣΤΑΣΕΙΣ ═══════════ -->
+  <div id="products" class="sec">
+    <div class="info-box">⚠️ Παραστάσεις στο θέατρο Αλκμήνης 13 — τα σχολεία/γονείς έρχονται εκεί. Παράσταση-βαλίτσα = ερχόμαστε εμείς στον χώρο τους.</div>
+    <div class="pgrid">
+      <div class="pcard"><div class="phead"><div class="ptitle">🧸 Κού-Κου! Μια Βολτά στο Δάσος</div><span class="badge bb">Τώρα</span></div><div class="pdesc">18μ.–5ετ · 50′ · Κυριακή 11:00 · Φύση &amp; φιλία · Ζωντανή μουσική</div><a class="plink" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el">🎟 Εισιτήρια</a><a class="plink" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html">→ Νηπιαγωγεία</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🐉 Ο Δράκος των Χρωμάτων</div><span class="badge bb">Τώρα</span></div><div class="pdesc">3–7ετ · 60′ · Κυριακή 18:00 · Διαφορετικότητα &amp; αποδοχή</div><a class="plink" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">🎟 Εισιτήρια</a><a class="plink" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html">→ Δημοτικό</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🏴‍☠️ Ο Πειρατής Μπου!</div><span class="badge bb">Τώρα</span></div><div class="pdesc">3,5–9ετ · 60′ · Κυριακή 12:30 · Αυτοπεποίθηση &amp; θάλασσα</div><a class="plink" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el">🎟 Εισιτήρια</a><a class="plink" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html">→ Δημοτικό</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🔔 Το Παιδί &amp; το Κουδουνάκι</div><span class="badge bb">Τώρα</span></div><div class="pdesc">3,5–8ετ · 60′ · Σάββατο 18:00 · Σύστημα Carl Orff</div><a class="plink" href="https://www.ticketservices.gr/event/to-paidi-kai-to-koudounaki-2026/?lang=el">🎟 Εισιτήρια</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🐸 Χεη-Χοπ! Παιχνίδια στη Φάρμα</div><span class="badge bb">Τώρα</span></div><div class="pdesc">18μ.–5ετ · 50′ · Ζώα, ήχοι, τραγούδι · Ζωντανή μουσική</div><a class="plink" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance.html">→ Παιδικοί Σταθμοί</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">☀️ Summer Camp 2026 — Παιδιά</div><span class="badge bg">Προτεραιότητα</span></div><div class="pdesc">4–11ετ · Βοτανικός Κήπος · 15/6–31/7 · 08:00–16:00 · Θέατρο, εικαστικά, μουσική</div><a class="plink" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">→ Πλήρης πληροφορία</a><a class="plink" href="https://forms.gle/kbXy32ykr7W67Yre6">✅ Εγγραφή 4–11</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">☀️ Summer Camp 2026 — Έφηβοι</div><span class="badge bg">Προτεραιότητα</span></div><div class="pdesc">12–16ετ · Ακαδημία Θεάτρου 22/6–3/7 · Κινηματογράφος Ιούλιος · Καλοκαίρι με Τέχνες</div><a class="plink" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26.html">→ Εφηβικά προγράμματα</a><a class="plink" href="https://forms.gle/rKfWPtr9MGzSZ72GA">✅ Εγγραφή 12+</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🏫 Εκπαιδευτικά &amp; Εργαστήρια</div><span class="badge bb">Τρέχον</span></div><div class="pdesc">Παιδικοί σταθμοί → Λύκειο · Teens Theatre Club · Θεατρικά εργαστήρια σχολείων</div><a class="plink" href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html">→ Εκπαιδευτικά</a><a class="plink" href="https://morfesekfrasis.gr/paidi-kai-texni/efiko-theatrikoergastiri-morfesekfrasis25.html">→ Teens Theatre Club</a></div>
+      <div class="pcard"><div class="phead"><div class="ptitle">🎬 Εργαστήρια Ενηλίκων</div><span class="badge ba">Νέα σεζόν</span></div><div class="pdesc">18+ · Εβδομαδιαία · Θέατρο, κίνηση, έκφραση · Team building</div><a class="plink" href="https://morfesekfrasis.gr/argastiria-enilikes-morfesekfrasis-2025.html">→ Εργαστήρια Ενηλίκων</a></div>
     </div>
   </div>
 
-  <div class="info-box">💡 Για παραστάσεις-βαλίτσα (στον χώρο σας) — επικοινωνήστε απευθείας: <a href="tel:2103464903">210-3464903</a> ή <a href="mailto:morfesconnect@gmail.com">morfesconnect@gmail.com</a></div>
-</section>
-
-<div class="sep"></div>
-
-<!-- ── ΤΙΜΟΚΑΤΑΛΟΓΟΣ ──────────────────────────────────────────────────── -->
-<section class="section" id="pricing">
-  <div class="sec-hd"><span class="sec-title">Τιμοκατάλογος</span></div>
-  <p class="sec-desc">Όλες οι τιμές — Summer Camp 2026 · Παραστάσεις · Extra παροχές</p>
-
-  <!-- SUMMER CAMP ΠΑΙΔΙΑ -->
-  <div class="price-title">☀️ Summer Camp 2026 — Παιδιά (4–11 ετών)</div>
-  <div class="price-grid">
-    <div class="pcard">
-      <div class="pcard-title">🌟 Μέλη Fun Club</div>
-      <div class="pcard-rows">
-        <strong>Early Bird έως 1/6:</strong><br>
-        1–4 εβδ.: <strong>122€</strong><br>
-        4–6 εβδ.: <strong>117€</strong><br>
-        7–9 εβδ.: <strong>107€</strong><br>
-        <br>
-        <strong>2ο παιδί (early):</strong><br>
-        1–4 εβδ.: <strong>105€</strong><br>
-        4–6 εβδ.: <strong>100€</strong><br>
-        7–9 εβδ.: <strong>95€</strong>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">👥 Standard</div>
-      <div class="pcard-rows">
-        <strong>Early Bird έως 1/6:</strong><br>
-        1–4 εβδ.: <strong>128€</strong><br>
-        4–6 εβδ.: <strong>123€</strong><br>
-        7–9 εβδ.: <strong>113€</strong><br>
-        <br>
-        <strong>Από 2 Ιουνίου:</strong><br>
-        1–2 εβδ.: <strong>135€</strong><br>
-        3–4 εβδ.: <strong>130€</strong><br>
-        5–6 εβδ.: <strong>125€</strong><br>
-        7–9 εβδ.: <strong>115€</strong>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">👶 2ο Παιδί (Standard)</div>
-      <div class="pcard-rows">
-        <strong>Early Bird έως 1/6:</strong><br>
-        1–4 εβδ.: <strong>111€</strong><br>
-        4–6 εβδ.: <strong>106€</strong><br>
-        7–9 εβδ.: <strong>100€</strong><br>
-        <br>
-        <strong>Από 2 Ιουνίου:</strong><br>
-        1–2 εβδ.: <strong>115€</strong><br>
-        3–4 εβδ.: <strong>110€</strong><br>
-        5–6 εβδ.: <strong>105€</strong><br>
-        7–9 εβδ.: <strong>100€</strong>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">➕ Extra Παροχές</div>
-      <div class="pcard-rows">
-        1 ημέρα: <strong>28€</strong><br>
-        Φύλαξη: <strong>35€/εβδ.</strong><br>
-        Σίτιση: <strong>50€/εβδ.</strong><br>
-        Πούλμαν: <strong>80€/εβδ.</strong>
-      </div>
-    </div>
-  </div>
-  <a class="price-link" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html" target="_blank">→ Πλήρης τιμοκατάλογος online</a>
-  <a class="price-link green" href="https://forms.gle/kbXy32ykr7W67Yre6" target="_blank" style="margin-left:8px">✅ Εγγραφή Παιδιά 4–11</a>
-
-  <!-- ΕΦΗΒΟΙ -->
-  <div class="price-title" style="margin-top:24px">🎬 Summer Camp 2026 — Εφηβικά Προγράμματα</div>
-  <div class="price-grid">
-    <div class="pcard">
-      <div class="pcard-title">🎭 Ακαδημία Θεάτρου (5ο)</div>
-      <div class="pcard-rows">
-        Early Bird: <strong>320€</strong><br>
-        Από 2/6: <strong>360€</strong><br>
-        Μέλη: <strong>280–300€</strong>
-      </div>
-      <a class="price-link green" href="https://forms.gle/2Qe5kfZdZZUwNbLk7" target="_blank" style="margin-top:10px;font-size:11px;padding:5px 12px">✅ Εγγραφή</a>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">🎬 Κινηματογράφος (4ο)</div>
-      <div class="pcard-rows">
-        Early Bird: <strong>320€</strong><br>
-        Από 2/6: <strong>360€</strong><br>
-        Μέλη: <strong>280–300€</strong>
-      </div>
-      <a class="price-link green" href="https://forms.gle/rKfWPtr9MGzSZ72GA" target="_blank" style="margin-top:10px;font-size:11px;padding:5px 12px">✅ Εγγραφή</a>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">🎨 Καλοκαίρι με Τέχνες</div>
-      <div class="pcard-rows">
-        Ίδιες τιμές με παιδικό<br>
-        Early Bird: <strong>107–128€/εβδ.</strong><br>
-        Μέλη: <strong>107–122€/εβδ.</strong>
-      </div>
-      <a class="price-link green" href="https://forms.gle/rKfWPtr9MGzSZ72GA" target="_blank" style="margin-top:10px;font-size:11px;padding:5px 12px">✅ Εγγραφή</a>
+  <!-- ═══════════ ΕΙΣΙΤΗΡΙΑ ═══════════ -->
+  <div id="tickets" class="sec">
+    <p style="font-size:13px;color:#666;margin-bottom:14px">Πάτα απευθείας για να οδηγήσεις τον πελάτη στην αγορά ή εγγραφή.</p>
+    <div class="tgrid">
+      <div class="tcard"><div class="tt">🧸 Κού-Κου!</div><div class="tm">Κυριακή 11:00 · 18μ.–5ετ · 50′</div><div class="tp">10€ / 8€</div><a class="tbtn" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el">🎟 Εισιτήρια</a></div>
+      <div class="tcard"><div class="tt">🐉 Δράκος Χρωμάτων</div><div class="tm">Κυριακή 18:00 · 3–7ετ · 60′</div><div class="tp">10€ / 8€</div><a class="tbtn" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">🎟 Εισιτήρια</a></div>
+      <div class="tcard"><div class="tt">🏴‍☠️ Πειρατής Μπου!</div><div class="tm">Κυριακή 12:30 · 3,5–9ετ · 60′</div><div class="tp">10€ / 8€</div><a class="tbtn" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el">🎟 Εισιτήρια</a></div>
+      <div class="tcard"><div class="tt">🔔 Παιδί &amp; Κουδουνάκι</div><div class="tm">Σάββατο 18:00 · 3,5–8ετ · 60′</div><div class="tp">10€ / 8€</div><a class="tbtn" href="https://www.ticketservices.gr/event/to-paidi-kai-to-koudounaki-2026/?lang=el">🎟 Εισιτήρια</a></div>
+      <div class="tcard"><div class="tt">☀️ Camp Παιδιά 4–11</div><div class="tm">15/6–31/7 · Βοτανικός · 08:00–16:00</div><div class="tp">από 107€/εβδ.</div><a class="tbtn" href="https://forms.gle/kbXy32ykr7W67Yre6">📋 Εγγραφή</a></div>
+      <div class="tcard"><div class="tt">☀️ Camp Έφηβοι 12–16</div><div class="tm">Καλοκαίρι με Τέχνες · από 16/6</div><div class="tp">από 107€/εβδ.</div><a class="tbtn" href="https://forms.gle/rKfWPtr9MGzSZ72GA">📋 Εγγραφή</a></div>
+      <div class="tcard"><div class="tt">🎭 Ακαδημία Θεάτρου</div><div class="tm">22/6–3/7 · 12–16ετ · 5ο Master Class</div><div class="tp">320€ early bird</div><a class="tbtn" href="https://forms.gle/2Qe5kfZdZZUwNbLk7">📋 Εγγραφή</a></div>
+      <div class="tcard"><div class="tt">🎬 Κινηματογράφος</div><div class="tm">Ιούλιος · 12–16ετ · 4ο Master Class</div><div class="tp">320€ early bird</div><a class="tbtn" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html">📋 Πληροφορίες</a></div>
     </div>
   </div>
 
-  <!-- ΠΑΡΑΣΤΑΣΕΙΣ -->
-  <div class="price-title" style="margin-top:24px">🎭 Παραστάσεις στο Θέατρο</div>
-  <div class="price-grid">
-    <div class="pcard">
-      <div class="pcard-title">Γενική είσοδος</div>
-      <div class="pcard-main">10€</div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">Παιδί / Μειωμένο</div>
-      <div class="pcard-main">8€</div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-title">Σχολικές ομάδες & βαλίτσα</div>
-      <div class="pcard-main pcard-sub" style="font-size:14px">Κατόπιν συνεννόησης</div>
-      <div class="pcard-sub">Επικοινωνία: 210-3464903</div>
-    </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-<!-- ── SCRIPTS ────────────────────────────────────────────────────────── -->
-<section class="section" id="scripts">
-  <div class="sec-hd"><span class="sec-title">Scripts Τηλεφωνικής</span></div>
-  <p class="sec-desc">Έτοιμοι διάλογοι — μπορείτε να τους επεξεργαστείτε στο τέλος (✏️ Επεξεργασία)</p>
-
-  <div class="script-box">
-    <div class="script-head">📞 Script #1 — Σχολεία & Νηπιαγωγεία <span class="sbadge">Παραστάσεις · Εκπ/κά Προγράμματα</span></div>
-    <div class="script-body">
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Καλημέρα, μιλάω με τον/τη [Όνομα]; Είμαι [Όνομά σας] από το Θέατρο Μορφές Έκφρασης. Επικοινωνώ γιατί έχουμε θεατρικές παραστάσεις για σχολεία και νηπιαγωγεία που νομίζω ότι θα σας ενδιέφεραν.»</div></div>
-      <div class="sline"><span class="role rcl">Σχολείο</span><div class="stext cl">«Ναι, ακούω...»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Οι Μορφές Έκφρασης είναι θέατρο με 30 χρόνια παρουσίας στα Πετράλωνα. Έχουμε παραστάσεις ειδικά σχεδιασμένες για κάθε ηλικία, από νηπιαγωγεία έως δημοτικό — με ζωντανή μουσική και συμμετοχή των παιδιών. Τα παιδιά έρχονται στο θέατρό μας στην Αλκμήνης 13, ή μπορούμε να έρθουμε εμείς με το παράσταση-βαλίτσα στον χώρο σας. Ποια ηλικία έχετε;»</div></div>
-      <div class="sline"><span class="role rcl">Σχολείο</span><div class="stext cl">«Νηπιαγωγείο, 4–6 χρονών...»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Τέλεια — για αυτή την ηλικία έχουμε 3 επιλογές: "Κού-Κου! Μια Βολτά στο Δάσος" (18μ–5ετ), "Ο Δράκος των Χρωμάτων" (3–7ετ), και "Χεη-Χοπ! Παιχνίδια στη Φάρμα". Όλες 60 λεπτά, ζωντανή μουσική, τα παιδιά συμμετέχουν ενεργά. Μπορώ να σας στείλω αναλυτικό υλικό;»</div></div>
-      <div class="link-block">
-        <strong>🔗 Links — στείλε αμέσως μετά</strong>
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html" target="_blank">→ Παραστάσεις για Νηπιαγωγεία</a>
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance.html" target="_blank">→ Παραστάσεις για Παιδικούς Σταθμούς</a>
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html" target="_blank">→ Παραστάσεις για Δημοτικό</a>
-        <a href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html" target="_blank">→ Εκπαιδευτικά Προγράμματα (Προνήπιο–Λύκειο)</a>
-        <a href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html" target="_blank">→ Παίζονται Τώρα (με πρόγραμμα & ώρες)</a>
+  <!-- ═══════════ ΤΙΜΟΚΑΤΑΛΟΓΟΣ ═══════════ -->
+  <div id="pricing" class="sec">
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-title">☀️ Summer Camp 2026 — Παιδιά 4–11 ετών (Early Bird έως 1/6)</div>
+      <div class="pricegrid">
+        <div class="pricecard"><div class="price-title">🌟 Μέλη Fun Club</div><div class="price-row"><span>1–4 εβδ.</span><span class="price-val">122€</span></div><div class="price-row"><span>4–6 εβδ.</span><span class="price-val">117€</span></div><div class="price-row"><span>7–9 εβδ.</span><span class="price-val">107€</span></div><div class="price-row"><span>2ο παιδί 1–4εβδ.</span><span class="price-val">105€</span></div><div class="price-row"><span>2ο παιδί 7–9εβδ.</span><span class="price-val">95€</span></div></div>
+        <div class="pricecard"><div class="price-title">👥 Standard — Early Bird</div><div class="price-row"><span>1–4 εβδ.</span><span class="price-val">128€</span></div><div class="price-row"><span>4–6 εβδ.</span><span class="price-val">123€</span></div><div class="price-row"><span>7–9 εβδ.</span><span class="price-val">113€</span></div></div>
+        <div class="pricecard"><div class="price-title">👥 Standard — Από 2/6</div><div class="price-row"><span>1–2 εβδ.</span><span class="price-val">135€</span></div><div class="price-row"><span>3–4 εβδ.</span><span class="price-val">130€</span></div><div class="price-row"><span>5–6 εβδ.</span><span class="price-val">125€</span></div><div class="price-row"><span>7–9 εβδ.</span><span class="price-val">115€</span></div></div>
+        <div class="pricecard"><div class="price-title">➕ Extra παροχές</div><div class="price-row"><span>1 ημέρα</span><span class="price-val">28€</span></div><div class="price-row"><span>Φύλαξη</span><span class="price-val">35€/εβδ.</span></div><div class="price-row"><span>Σίτιση</span><span class="price-val">50€/εβδ.</span></div><div class="price-row"><span>Πούλμαν</span><span class="price-val">80€/εβδ.</span></div></div>
       </div>
-      <a class="close-action green" href="mailto:morfesconnect@gmail.com?subject=Πρόταση%20Παράστασης%20για%20Σχολείο%20—%20Μορφές%20Έκφρασης" target="_blank">✉️ Στείλε Email Τώρα</a>
     </div>
-  </div>
-
-  <div class="script-box">
-    <div class="script-head">📞 Script #2 — Δήμοι <span class="sbadge">Παραστάσεις · Summer Camp · Δράσεις</span></div>
-    <div class="script-body">
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Καλημέρα, ζητώ τον/την υπεύθυνο για δράσεις Παιδείας ή Πολιτισμού. Είμαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Οι Μορφές Έκφρασης έχουν 30 χρόνια παρουσία με καλλιτεχνικά εκπαιδευτικά προγράμματα για παιδιά και εφήβους. Φέτος καλοκαίρι έχουμε το 13ο Summer Camp στον Βοτανικό Κήπο Διομήδους, 15 Ιουνίου–31 Ιουλίου. Θα σας ενδιέφερε συνεργασία για χρηματοδότηση θέσεων ή παραστάσεις σε δημοτικές δομές;»</div></div>
-      <div class="sline"><span class="role rcl">Δήμος</span><div class="stext cl">«Πρέπει να δω αν υπάρχει πρόβλεψη...»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Καταλαβαίνω. Θα σας στείλω αναλυτική πρόταση ώστε να την έχετε έτοιμη. Σε ποιο email;»</div></div>
-      <div class="link-block">
-        <strong>🔗 Links — στείλε αμέσως μετά</strong>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html" target="_blank">→ Summer Camp 2026 — πλήρης πληροφορία</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html" target="_blank">→ Κόστος & Πακέτα</a>
-        <a href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html" target="_blank">→ Παραστάσεις που παίζονται τώρα</a>
-        <a href="https://forms.gle/kbXy32ykr7W67Yre6" target="_blank">→ Εγγραφή Παιδιών (για ανακοίνωση στον δήμο)</a>
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-title">☀️ Summer Camp 2026 — Έφηβοι 12–16 ετών</div>
+      <div class="pricegrid">
+        <div class="pricecard"><div class="price-title">🎭 Ακαδημία Θεάτρου (5ο)</div><div class="price-row"><span>Early Bird</span><span class="price-val">320€</span></div><div class="price-row"><span>Από 2/6</span><span class="price-val">360€</span></div><div class="price-row"><span>Μέλη</span><span class="price-val">280–300€</span></div></div>
+        <div class="pricecard"><div class="price-title">🎬 Κινηματογράφος (4ο)</div><div class="price-row"><span>Early Bird</span><span class="price-val">320€</span></div><div class="price-row"><span>Από 2/6</span><span class="price-val">360€</span></div><div class="price-row"><span>Μέλη</span><span class="price-val">280–300€</span></div></div>
+        <div class="pricecard"><div class="price-title">🎨 Καλοκαίρι με Τέχνες</div><div class="price-row"><span>Early Bird Μέλη</span><span class="price-val">107–122€</span></div><div class="price-row"><span>Early Bird Standard</span><span class="price-val">113–128€</span></div><div class="price-row"><span>Από 2/6</span><span class="price-val">115–135€</span></div></div>
       </div>
-      <a class="close-action orange" href="mailto:morfesconnect@gmail.com?subject=Πρόταση%20Συνεργασίας%20Δήμου%20—%20Μορφές%20Έκφρασης" target="_blank">✉️ Στείλε Email Τώρα</a>
+    </div>
+    <div class="card">
+      <div class="card-title">🎭 Παραστάσεις στο Θέατρο</div>
+      <div class="row"><span class="rl">Γενική είσοδος</span><span class="rv">10€</span></div>
+      <div class="row"><span class="rl">Παιδί / Μειωμένο</span><span class="rv">8€</span></div>
+      <div class="row"><span class="rl">Σχολικές ομάδες &amp; βαλίτσα</span><span class="rv">Κατόπιν συνεννόησης · 210-3464903</span></div>
+      <div class="row"><span class="rl">Τιμολόγιο</span><span class="rv">Εκδίδεται κανονικά · ΑΦΜ: 801656351</span></div>
     </div>
   </div>
 
-  <div class="script-box">
-    <div class="script-head">📞 Script #3 — Εταιρείες (Employee Benefits) <span class="sbadge">Summer Camp · Παιδιά Εργαζομένων</span></div>
-    <div class="script-body">
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Καλημέρα, ζητώ τον/την υπεύθυνο HR. Είμαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Πολλές εταιρείες αναζητούν λύσεις για τα παιδιά των εργαζομένων το καλοκαίρι. Οι Μορφές Έκφρασης προσφέρουν εταιρικές τιμές για το 13ο Summer Camp 2026 στον Βοτανικό Κήπο Διομήδους — 08:00–16:00, για παιδιά 4–17 ετών. Έχετε κάτι ήδη;»</div></div>
-      <div class="sline"><span class="role rcl">Εταιρεία</span><div class="stext cl">«Δεν είχαμε σκεφτεί κάτι τέτοιο...»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Ακριβώς γι' αυτό σας καλώ — είναι benefit που εκτιμούν πολύ οι γονείς-εργαζόμενοι. Μπορούμε να φτιάξουμε εταιρικό πακέτο. Σας στέλνω την πρόταση;»</div></div>
-      <div class="link-block">
-        <strong>🔗 Links — στείλε αμέσως μετά</strong>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html" target="_blank">→ Summer Camp 2026</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html" target="_blank">→ Κόστος (από 107€/παιδί/εβδ. early bird)</a>
-        <a href="https://forms.gle/kbXy32ykr7W67Yre6" target="_blank">→ Εγγραφή Παιδιά 4–11</a>
-        <a href="https://forms.gle/rKfWPtr9MGzSZ72GA" target="_blank">→ Εγγραφή Έφηβοι 12+</a>
+  <!-- ═══════════ SCRIPTS ═══════════ -->
+  <div id="scripts" class="sec">
+    <p style="font-size:13px;color:#666;margin-bottom:6px">Διπλό κλικ σε οποιαδήποτε セリφ για να την επεξεργαστείς — αποθηκεύεται για όλους.</p>
+    <p style="font-size:12px;color:#aaa;margin-bottom:18px">💡 Διπλό κλικ → επεξεργασία → Αποθήκευση</p>
+
+    <!-- SCRIPT MAIN TABS -->
+    <div class="tabs">
+      <button class="tab on" onclick="swTab('st',0,this)">Παραστάσεις</button>
+      <button class="tab" onclick="swTab('st',1,this)">Summer Camp</button>
+      <button class="tab" onclick="swTab('st',2,this)">Άλλα</button>
+    </div>
+
+    <!-- ΠΑΡΑΣΤΑΣΕΙΣ -->
+    <div class="panel on" id="st0">
+      <div style="background:#fff;border:1px solid #e8e8e6;border-radius:12px;padding:16px 20px;margin-bottom:14px">
+        <div style="font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">📞 Scripts Παραστάσεων — ανά κατηγορία</div>
+        <div class="tabs">
+          <button class="tab tab-sm on" onclick="swTab('sp',0,this)">Παιδ. Σταθμός</button>
+          <button class="tab tab-sm" onclick="swTab('sp',1,this)">Νηπιαγωγείο</button>
+          <button class="tab tab-sm" onclick="swTab('sp',2,this)">Δημοτικό</button>
+          <button class="tab tab-sm" onclick="swTab('sp',3,this)">Γυμνάσιο/Λύκειο</button>
+        </div>
+
+        <!-- Παιδικός Σταθμός -->
+        <div class="panel on" id="sp0">
+          <div class="slabel">Script #Π1Α — Παιδικός Σταθμός</div>
+          <div class="stitle">Παραστάσεις για βρέφη &amp; νήπια (18μ.–5ετ)</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1a_1">«Καλημέρα σας! Ονομάζομαι [Όνομα] και εκπροσωπώ το Θέατρο Μορφές Έκφρασης. Μιλώ με τον/την υπεύθυνο/η του σταθμού; Με ποιον/ποια έχω τη χαρά να μιλώ;»</div></div>
+            <div class="line"><span class="spk spk-s">Σταθμός</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1a_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1a_3">«Κυρία/Κύριε [Επίθετο], σας καλώ γιατί πιστεύω ότι αυτό που κάνουμε μπορεί να ταιριάξει πολύ με τον κόσμο σας. Το Θέατρο Μορφές Έκφρασης έχει 30 χρόνια παρουσίας — ιδρύθηκε και διευθύνεται από τον κ. Θωμά Κινδύνη, σκηνοθέτη και ηθοποιό που αφιέρωσε τρεις δεκαετίες στο εκπαιδευτικό θέατρο. Έχουμε φτιάξει παραστάσεις ειδικά από 18 μηνών — γιατί πιστεύουμε ότι ακόμα και τα πιο μικρά παιδιά αξίζουν θέατρο που τα αγγίζει αληθινά.»</div></div>
+            <div class="line"><span class="spk spk-s">Σταθμός</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1a_4">«Τι ακριβώς έχετε για τις ηλικίες μας;»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1a_5">«Για παιδιά από 18 μηνών ως 5 ετών έχουμε δύο παραστάσεις σε κείμενο και σκηνοθεσία της κ. Άννας Σεβαστής Τζίμα: "Κού-Κου! Μια Βολτά στο Δάσος" — ένα παιδί γίνεται φίλο με ένα πουλί, τρυφερή και ήρεμη, ιδανική ακόμα και για τα πιο μικρά. Και "Χεη-Χοπ! Παιχνίδια στη Φάρμα" — ένας αγρότης ψάχνει τα ζωάκια του, τα βρίσκει να τραγουδούν. Τα παιδάκια μαθαίνουν κάθε ζώο, τον ήχο του, το φαγητό του — συμμετέχουν κι αυτά ενεργά. Και οι δύο με ζωντανή μουσική, 50–60 λεπτά. Μπορούν να έρθουν στο θέατρό μας ή ερχόμαστε εμείς με παράσταση-βαλίτσα. Σας στέλνω αναλυτικό υλικό;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Αν έχει παιδιά 3–5ετ:</strong> Πρόσθεσε "Ο Δράκος των Χρωμάτων" — ιστορία για διαφορετικότητα και αποδοχή, πολύ αγαπητή.</div>
+          <div class="warn-box"><strong>Αποφεύγουμε:</strong> «Τέλεια!» · «Μην αγχώνεστε» → Λέμε: «Πολύ ωραία!» · «Με την ησυχία σας» · «Θα το φροντίσω οπωσδήποτε»</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance.html">Παιδικοί Σταθμοί</a>
+            <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html">Νηπιαγωγεία</a>
+            <a class="lp" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el">Εισιτήρια Κού-Κου</a>
+          </div>
+        </div>
+
+        <!-- Νηπιαγωγείο -->
+        <div class="panel" id="sp1">
+          <div class="slabel">Script #Π1Β — Νηπιαγωγείο (4–6ετ)</div>
+          <div class="stitle">Παραστάσεις &amp; Εκπαιδευτικά</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1b_1">«Καλημέρα σας. Ονομάζομαι [Όνομα], από το Θέατρο Μορφές Έκφρασης. Με ποιον κύριο ή ποια κυρία έχω τη χαρά να συνομιλώ;»</div></div>
+            <div class="line"><span class="spk spk-s">Νηπ/γείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1b_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1b_3">«Σας κάλεσα προκειμένου να σας ενημερώσω για τις θεατρικές μας παραστάσεις για νηπιαγωγεία — νομίζω ότι θα σας ενδιέφεραν. Οι Μορφές Έκφρασης είμαστε ένα θέατρο με 30 χρόνια παρουσίας. Ιδρυτής και Διευθυντής είναι ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός — αφιέρωσε τρεις δεκαετίες στο να φτιάχνει θέατρο ειδικά για παιδιά. Διαδραστικές παραστάσεις, με ζωντανή μουσική και ενεργητική συμμετοχή παιδιών.»</div></div>
+            <div class="line"><span class="spk spk-s">Νηπ/γείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1b_4">«Ναι, ακούω...»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1b_5">«Για παιδιά 4–6 ετών έχουμε τρεις επιλογές — "Κού-Κου! Μια Βολτά στο Δάσος" για 18μ.–5ετ, τρυφερή ιστορία φύσης και φιλίας. "Ο Δράκος των Χρωμάτων" για 3–7ετ, χαρούμενη ιστορία για τη διαφορετικότητα με χιούμορ. "Χεη-Χοπ! Παιχνίδια στη Φάρμα" για 18μ.–5ετ, τα παιδιά συμμετέχουν ενεργά — μαθαίνουν ζωάκια, ήχους, φαγητά. Όλες 50–60 λεπτά, ζωντανή μουσική. Έρχονται στο θέατρό μας ή ερχόμαστε εμείς με βαλίτσα. Σας στέλνω αναλυτικό υλικό;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Για κόστος:</strong> «Από 8€/παιδί. Για σχολικές ομάδες υπάρχει ειδική τιμή κατόπιν συνεννόησης.»</div>
+          <div class="warn-box"><strong>Αποφεύγουμε:</strong> «Τέλεια!» · «Μην αγχώνεστε» → «Πολύ ωραία!» · «Με την ησυχία σας»</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html">Νηπιαγωγεία</a>
+            <a class="lp" href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html">Παίζονται τώρα</a>
+            <a class="lp" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">Εισιτήρια Δράκος</a>
+          </div>
+        </div>
+
+        <!-- Δημοτικό -->
+        <div class="panel" id="sp2">
+          <div class="slabel">Script #Π1Γ — Δημοτικό</div>
+          <div class="stitle">Παραστάσεις &amp; Εκπαιδευτικά (4–12ετ)</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1c_1">«Καλημέρα σας. Ζητώ τον/την κ. Διευθυντή/ντρια ή τον/την υπεύθυνο/η πολιτιστικών δράσεων. Ονομάζομαι [Όνομα], από το Θέατρο Μορφές Έκφρασης. Με ποιον/ποια έχω τη χαρά να μιλώ;»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1c_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1c_3">«Κυρία/Κύριε [Επίθετο], σας καλώ γιατί πιστεύω ότι μπορούμε να συνεισφέρουμε σε κάτι που ήδη κάνετε με μεράκι — τον πολιτισμό μέσα στη σχολική καθημερινότητα. Το Θέατρο Μορφές Έκφρασης λειτουργεί 30 χρόνια στην Αθήνα. Ιδρύθηκε από τον κ. Θωμά Κινδύνη — σκηνοθέτη, ηθοποιό, Ιδρυτή και Διευθυντή — έναν άνθρωπο που αφιέρωσε τρεις δεκαετίες στο εκπαιδευτικό θέατρο.»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1c_4">«Ναι, ακούω...»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1c_5">«Αυτή τη σεζόν έχουμε "Ο Δράκος των Χρωμάτων" για Α'–Β' Δημοτικού — ιστορία για τη διαφορετικότητα με χιούμορ και μουσική που δεν ξεχνιέται. Και "Ο Πειρατής Μπου!" για Β'–Δ' Δημοτικού — για αυτοπεποίθηση και θαλάσσιο περιβάλλον, τα παιδιά γίνονται μέρος της περιπέτειας. 60 λεπτά, ζωντανή μουσική, από 8€. Έχουμε επίσης θεατρικά εργαστήρια για όλες τις τάξεις. Και για το καλοκαίρι — το Summer Camp μας στον Βοτανικό Κήπο για παιδιά 4–11 ετών, αν θέλετε να το αναφέρετε στους γονείς. Σας στέλνω αναλυτικό υλικό;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Για κόστος:</strong> «Από 8€. Σχολικές ομάδες &amp; βαλίτσα κατόπιν συνεννόησης.»</div>
+          <div class="warn-box"><strong>Αποφεύγουμε:</strong> «Τέλεια!» · «Μην αγχώνεστε» → «Πολύ ωραία!» · «Χαίρομαι που το ακούω»</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html">Δημοτικό</a>
+            <a class="lp" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el">Πειρατής Μπου</a>
+            <a class="lp" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">Δράκος Χρωμάτων</a>
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp</a>
+          </div>
+        </div>
+
+        <!-- Γυμνάσιο/Λύκειο -->
+        <div class="panel" id="sp3">
+          <div class="slabel">Script #Π1Δ — Γυμνάσιο / Λύκειο</div>
+          <div class="stitle">Teens Theatre Club &amp; Εκπαιδευτικά (12–16ετ)</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1d_1">«Καλημέρα σας. Ζητώ τον/την κ. Διευθυντή/ντρια ή τον/την υπεύθυνο/η προγραμμάτων. Ονομάζομαι [Όνομα], από το Θέατρο Μορφές Έκφρασης. Με ποιον/ποια έχω τη χαρά να μιλώ;»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1d_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1d_3">«Κυρία/Κύριε [Επίθετο], σας καλώ για κάτι που αφορά τους εφήβους σας — και ξέρω πόσο δύσκολο μπορεί να είναι να τους τραβήξεις το ενδιαφέρον. Το Θέατρο Μορφές Έκφρασης λειτουργεί 30 χρόνια — ιδρύθηκε από τον κ. Θωμά Κινδύνη, σκηνοθέτη, ηθοποιό και Διευθυντή. Έχουμε ένα πρόγραμμα ειδικά για εφήβους που κάνει ακριβώς αυτό — τους τραβά το ενδιαφέρον.»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="p1d_4">«Τι ακριβώς εννοείτε;»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="p1d_5">«Το Teens Theatre Club — εβδομαδιαίο εργαστήριο για Β' Γυμνασίου έως Λύκειο. Δεν είναι απλώς θέατρο — είναι χώρος όπου οι έφηβοι εκφράζονται ελεύθερα, συνεργάζονται, ανακαλύπτουν φωνή, κίνηση και αυτοπεποίθηση. Κλείνει με παρουσίαση στο τέλος της χρονιάς. Και για το καλοκαίρι έχουμε Ακαδημία Θεάτρου και Master Class Κινηματογράφου για 12–16 ετών — εντατικά, από 320€ early bird έως 1/6. Να σας στείλω αναλυτικό υλικό;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Ιδιωτικό σχολείο:</strong> Ανάφερε Ακαδημία &amp; Master Class ως premium — 320€ early bird.</div>
+          <div class="warn-box"><strong>Αποφεύγουμε:</strong> «Τέλεια!» · «Μην αγχώνεστε» → «Πολύ ωραία!» · «Χαίρομαι που το ακούω»</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/paidi-kai-texni/efiko-theatrikoergastiri-morfesekfrasis25.html">Teens Theatre Club</a>
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-13-17-summrer-camp-theatro.html">Ακαδημία Θεάτρου</a>
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html">Κινηματογράφος</a>
+          </div>
+        </div>
       </div>
-      <a class="close-action green" href="mailto:morfesconnect@gmail.com?subject=Εταιρικό%20Πακέτο%20Summer%20Camp%202026%20—%20Μορφές%20Έκφρασης" target="_blank">✉️ Στείλε Email Τώρα</a>
     </div>
-  </div>
 
-  <div class="script-box">
-    <div class="script-head">📞 Script #4 — Χορηγοί / Υποτροφίες <span class="sbadge">CSR · Ευάλωτες Οικογένειες</span></div>
-    <div class="script-body">
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Καλημέρα, μιλώ με τον/τη [Όνομα] από το τμήμα CSR/HR; Είμαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Τρέχουμε πρόγραμμα υποτροφιών ώστε παιδιά από ευάλωτες οικογένειες να συμμετέχουν στο 13ο Summer Camp μας. Αναζητάμε εταιρείες που θέλουν να στηρίξουν αυτή την προσπάθεια. Ενδιαφέρεστε;»</div></div>
-      <div class="sline"><span class="role rcl">Εταιρεία</span><div class="stext cl">«Πόσο κοστίζει;»</div></div>
-      <div class="sline"><span class="role rus">Εμείς</span><div class="stext">«Από 107€/παιδί/εβδομάδα. Μπορείτε να χορηγήσετε όσα παιδιά θέλετε. Εκδίδουμε τιμολόγιο κανονικά — ΑΦΜ: 801656351. Σας στέλνω την πρόταση;»</div></div>
-      <div class="link-block">
-        <strong>🔗 Links — στείλε αμέσως μετά</strong>
-        <a href="https://morfesekfrasis.gr/dorees.html" target="_blank">→ Σελίδα Δωρεών & Χορηγιών</a>
-        <a href="https://morfesekfrasis.gr/filoi-ton-morfon-ekfrasis/xorigoi.html" target="_blank">→ Χορηγοί (υπάρχοντες)</a>
-        <a href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html" target="_blank">→ Κόστος Συμμετοχής</a>
+    <!-- SUMMER CAMP SCRIPTS -->
+    <div class="panel" id="st1">
+      <div style="background:#fff;border:1px solid #e8e8e6;border-radius:12px;padding:16px 20px;margin-bottom:14px">
+        <div style="font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">📞 Scripts Summer Camp (ηλικίες 4–16)</div>
+        <div class="tabs">
+          <button class="tab tab-sm on" onclick="swTab('sc',0,this)">Γονείς 4–11</button>
+          <button class="tab tab-sm" onclick="swTab('sc',1,this)">Γονείς 12–16</button>
+          <button class="tab tab-sm" onclick="swTab('sc',2,this)">Σχολεία</button>
+          <button class="tab tab-sm" onclick="swTab('sc',3,this)">Εταιρείες</button>
+          <button class="tab tab-sm" onclick="swTab('sc',4,this)">Δήμοι</button>
+        </div>
+
+        <!-- Γονείς 4–11 -->
+        <div class="panel on" id="sc0">
+          <div class="slabel">Script #SC·1A — Γονείς παιδιών 4–11</div>
+          <div class="stitle">Summer Camp 2026 — Παιδιά</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1a_1">«Καλημέρα σας! Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης. Μιλώ με τον/την κ./κα [Επίθετο];»</div></div>
+            <div class="line"><span class="spk spk-s">Γονέας</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc1a_2">«Ναι, εγώ είμαι.»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1a_3">«Σας καλώ γιατί νομίζω ότι το παιδί σας θα περάσει ένα πολύ ιδιαίτερο καλοκαίρι με εμάς. Οι Μορφές Έκφρασης — το θέατρο που ίδρυσε ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός με 30 χρόνια στον χώρο — διοργανώνουν φέτος το 13ο καλλιτεχνικό Summer Camp τους, στον Βοτανικό Κήπο Διομήδους. Από 15 Ιουνίου έως 31 Ιουλίου, για παιδιά 4 έως 11 ετών, από τις 8:00 ως τις 16:00.»</div></div>
+            <div class="line"><span class="spk spk-s">Γονέας</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc1a_4">«Τι κάνουν εκεί;»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1a_5">«Δεν είναι το τυπικό camp — κάθε μέρα θέατρο, εικαστικά, μουσική, κίνηση, όλα στον καταπράσινο Βοτανικό Κήπο. Το παιδί δοκιμάζει, εκφράζεται, γυρίζει στο σπίτι με κάτι αληθινό. Υπάρχει φύλαξη, σίτιση και πούλμαν αν χρειαστεί. Οι Early Bird τιμές ισχύουν μέχρι 1η Ιουνίου — από 107€/εβδομάδα. Ήδη τρέχουν εγγραφές. Σας στέλνω αναλυτικό υλικό;»</div></div>
+            <div class="line"><span class="spk spk-s">Γονέας</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc1a_6">«Ναι, γιατί όχι.»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1a_7">«Πολύ ωραία! Σε ποιο email να σας το στείλω; Μπορείτε να κάνετε εγγραφή απευθείας online — θα σας βάλω και τον σύνδεσμο.»</div></div>
+          </div>
+          <div class="tip-box"><strong>Για κόστος αμέσως:</strong> «Από 107€/εβδ. Early Bird έως 1/6. 2ο παιδί από 95€. Πακέτα πολλαπλών εβδομάδων με καλύτερη τιμή.»</div>
+          <div class="warn-box"><strong>Αποφεύγουμε:</strong> «Τέλεια!» → «Πολύ ωραία!» · «Θα το φροντίσω οπωσδήποτε»</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος &amp; Πακέτα</a>
+            <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+          </div>
+        </div>
+
+        <!-- Γονείς 12–16 -->
+        <div class="panel" id="sc1">
+          <div class="slabel">Script #SC·1B — Γονείς εφήβων 12–16</div>
+          <div class="stitle">Summer Camp 2026 — Έφηβοι</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1b_1">«Καλημέρα σας! Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης. Μιλώ με τον/την κ./κα [Επίθετο];»</div></div>
+            <div class="line"><span class="spk spk-s">Γονέας</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc1b_2">«Ναι, εγώ είμαι.»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1b_3">«Σας καλώ για κάτι που αφορά τον έφηβο/η σας — και ξέρω πόσο δύσκολο είναι να βρεις κάτι που να τον/την ενθουσιάζει πραγματικά το καλοκαίρι. Οι Μορφές Έκφρασης — το θέατρο που ίδρυσε ο κ. Θωμάς Κινδύνης με 30 χρόνια ιστορίας — διοργανώνουν φέτος εντατικά καλοκαιρινά προγράμματα για εφήβους 12–16 ετών.»</div></div>
+            <div class="line"><span class="spk spk-s">Γονέας</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc1b_4">«Τι προγράμματα;»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc1b_5">«Δύο ξεχωριστά προγράμματα: η Ακαδημία Θεάτρου — 5ο Master Class, από 22 Ιουνίου έως 3 Ιουλίου, εντατικό πρόγραμμα θεατρικής έκφρασης — και το Master Class Κινηματογράφου τον Ιούλιο, για όσους θέλουν να δουν τον κόσμο μέσα από κάμερα. Και οι δύο είναι εμπειρίες που οι έφηβοι θυμούνται για χρόνια. Από 320€ early bird έως 1η Ιουνίου. Υπάρχει επίσης το "Καλοκαίρι με Τέχνες" — πιο χαλαρό, εβδομαδιαίο πρόγραμμα από 107€/εβδ. Τι ηλικία έχει ο/η μικρός/ή σας;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Αν είναι 12–13 ετών:</strong> Πρόσθεσε "Καλοκαίρι με Τέχνες" ως πιο ήπια επιλογή αν ο έφηβος δεν είναι έτοιμος για εντατικό πρόγραμμα.</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26.html">Εφηβικά προγράμματα</a>
+            <a class="lp" href="https://forms.gle/2Qe5kfZdZZUwNbLk7">Εγγραφή Ακαδημία</a>
+            <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή Έφηβοι</a>
+          </div>
+        </div>
+
+        <!-- Σχολεία για Camp -->
+        <div class="panel" id="sc2">
+          <div class="slabel">Script #SC·2 — Σχολεία / Νηπιαγωγεία</div>
+          <div class="stitle">Summer Camp — Ενημέρωση γονέων μέσω σχολείου (4–16ετ)</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc2_1">«Καλημέρα σας. Ζητώ τον/την κ. Διευθυντή/ντρια. Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc2_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc2_3">«Κυρία/Κύριε [Επίθετο], θα ήθελα να σας ενημερώσω για το 13ο καλλιτεχνικό Summer Camp του θεάτρου μας — που ιδρύθηκε από τον κ. Θωμά Κινδύνη, σκηνοθέτη με 30 χρόνια εκπαιδευτικού θεάτρου. Το camp γίνεται στον Βοτανικό Κήπο Διομήδους, 15 Ιουνίου–31 Ιουλίου, για παιδιά 4–11 ετών και εφήβους 12–16. Θα ήταν δυνατό να ενημερώσουμε τους γονείς μέσω του σχολείου σας — π.χ. με ένα ενημερωτικό στο e-class ή στην ομάδα γονέων;»</div></div>
+            <div class="line"><span class="spk spk-s">Σχολείο</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc2_4">«Μπορώ να το προωθήσω, τι θέλετε να στείλω;»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc2_5">«Πολύ ωραία, σας ευχαριστώ! Θα σας στείλω ένα έτοιμο κείμενο με τον σύνδεσμο εγγραφής — δεν χρειάζεται να κάνετε τίποτα άλλο. Σε ποιο email;»</div></div>
+          </div>
+          <div class="tip-box"><strong>Bonus:</strong> Αν το σχολείο δείξει ενδιαφέρον για ομαδική εγγραφή, προσφέρου εταιρική/ομαδική τιμή κατόπιν συνεννόησης.</div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+            <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+            <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+          </div>
+        </div>
+
+        <!-- Εταιρείες Camp -->
+        <div class="panel" id="sc3">
+          <div class="slabel">Script #SC·3 — Εταιρείες (Employee Benefits)</div>
+          <div class="stitle">Summer Camp για παιδιά εργαζομένων 4–16ετ</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc3_1">«Καλημέρα σας. Ζητώ τον/την υπεύθυνο/η HR ή Διοίκησης. Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
+            <div class="line"><span class="spk spk-s">Εταιρεία</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc3_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc3_3">«Κυρία/Κύριε [Επίθετο], πολλές εταιρείες αναζητούν λύσεις για τα παιδιά των εργαζομένων το καλοκαίρι. Οι Μορφές Έκφρασης — θέατρο που ίδρυσε ο κ. Θωμάς Κινδύνης με 30 χρόνια ιστορίας — διοργανώνουν το 13ο Summer Camp τους στον Βοτανικό Κήπο Διομήδους, 15/6–31/7, για παιδιά και εφήβους 4–16 ετών, από 8:00–16:00. Έχετε κάτι ήδη οργανωμένο για τα παιδιά των εργαζομένων σας;»</div></div>
+            <div class="line"><span class="spk spk-s">Εταιρεία</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc3_4">«Όχι, δεν είχαμε σκεφτεί κάτι τέτοιο.»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc3_5">«Ακριβώς γι' αυτό σας καλώ — είναι benefit που εκτιμούν βαθιά οι γονείς-εργαζόμενοι. Εταιρικές τιμές από 107€/εβδ. early bird έως 1/6, 2ο παιδί από 95€, τιμολόγιο κανονικά. Μπορούμε να φτιάξουμε πακέτο στα μέτρα σας. Σας στέλνω αναλυτική πρόταση;»</div></div>
+          </div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος &amp; Πακέτα</a>
+            <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+            <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+          </div>
+        </div>
+
+        <!-- Δήμοι Camp -->
+        <div class="panel" id="sc4">
+          <div class="slabel">Script #SC·4 — Δήμοι</div>
+          <div class="stitle">Summer Camp — Χρηματοδότηση θέσεων / συνεργασία (4–16ετ)</div>
+          <div class="exchange">
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc4_1">«Καλημέρα σας. Ζητώ τον/την υπεύθυνο/η Παιδείας ή Πολιτισμού. Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
+            <div class="line"><span class="spk spk-s">Δήμος</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc4_2">«[Απαντά]»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc4_3">«Κυρία/Κύριε [Επίθετο], σας καλώ για μια πρόταση συνεργασίας που πιστεύω ότι θα ενδιαφέρει τον δήμο σας. Οι Μορφές Έκφρασης — υπό τη διεύθυνση του κ. Θωμά Κινδύνη, σκηνοθέτη με 30 χρόνια εκπαιδευτικού θεάτρου — διοργανώνουν το 13ο Summer Camp στον Βοτανικό Κήπο, 15/6–31/7, για παιδιά και εφήβους 4–16 ετών. Θα σας ενδιέφερε να δεσμεύσουμε θέσεις για παιδιά δημοτών ή να συζητήσουμε παραστάσεις σε δημοτικές δομές;»</div></div>
+            <div class="line"><span class="spk spk-s">Δήμος</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sc4_4">«Πρέπει να δω αν υπάρχει πρόβλεψη προϋπολογισμού...»</div></div>
+            <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sc4_5">«Καταλαβαίνω απόλυτα — θα σας στείλω αναλυτική πρόταση ώστε να την έχετε έτοιμη. Σε ποιο email;»</div></div>
+          </div>
+          <div class="slinks">
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+            <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος</a>
+          </div>
+        </div>
       </div>
-      <div class="hl" style="margin-top:10px">IBAN: GR21 0140 5660 5660 0200 2000 021 | Alpha Bank | Επωνυμία: ΜΟΡΦΕΣ ΕΚΦΡΑΣΗΣ</div>
-      <a class="close-action red" href="mailto:morfesconnect@gmail.com?subject=Πρόταση%20Χορηγίας%20—%20Μορφές%20Έκφρασης" target="_blank">✉️ Στείλε Email Τώρα</a>
     </div>
+
+    <!-- ΑΛΛΑ SCRIPTS -->
+    <div class="panel" id="st2">
+      <div class="sblock">
+        <div class="slabel">Script #Α1 — Δήμοι (Παραστάσεις)</div>
+        <div class="stitle">Παραστάσεις σε δημοτικές δομές &amp; Summer Camp</div>
+        <div class="exchange">
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa1_1">«Καλημέρα σας. Ζητώ τον/την υπεύθυνο/η δράσεων Παιδείας ή Πολιτισμού. Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa1_2">«Οι Μορφές Έκφρασης — υπό τη διεύθυνση του κ. Θωμά Κινδύνη, σκηνοθέτη, ηθοποιού και ιδρυτή — έχουν 30 χρόνια παρουσία με εκπαιδευτικές παραστάσεις για παιδιά από 18 μηνών και καλλιτεχνικά προγράμματα για παιδιά και εφήβους 4–16 ετών. Θα σας ενδιέφερε συνεργασία για παραστάσεις σε δημοτικούς παιδικούς σταθμούς ή δομές, ή θέσεις στο Summer Camp για παιδιά δημοτών;»</div></div>
+          <div class="line"><span class="spk spk-s">Δήμος</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sa1_3">«Στείλτε μου πρόταση.»</div></div>
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa1_4">«Με χαρά. Σε ποιο email και σε ποιο όνομα να την απευθύνω;»</div></div>
+        </div>
+        <div class="slinks">
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html">Εκπαιδευτικά</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp</a>
+        </div>
+      </div>
+      <div class="sblock">
+        <div class="slabel">Script #Α2 — Εταιρείες (Παραστάσεις + Team Building)</div>
+        <div class="stitle">Παραστάσεις για παιδιά εταιρείας &amp; εργαστήρια ενηλίκων</div>
+        <div class="exchange">
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa2_1">«Καλημέρα σας. Ζητώ τον/την υπεύθυνο/η HR. Ονομάζομαι [Όνομα] από το Θέατρο Μορφές Έκφρασης.»</div></div>
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa2_2">«Έχουμε δύο πράγματα που μπορεί να ενδιαφέρουν την εταιρεία σας: παραστάσεις για παιδιά εργαζομένων 4–16 ετών — ιδανικές για εταιρικές εκδηλώσεις ή χριστουγεννιάτικες γιορτές — και εργαστήρια θεατρικής έκφρασης για ενηλίκους, ιδανικά για team building. Το θέατρο ιδρύθηκε από τον κ. Θωμά Κινδύνη με 30 χρόνια ιστορίας. Κάτι από τα δύο σας ακούγεται ενδιαφέρον;»</div></div>
+          <div class="line"><span class="spk spk-s">Εταιρεία</span><div class="bubble bs" ondblclick="startEdit(this)" data-key="sa2_3">«Τα παιδιά — τι ακριβώς είναι;»</div></div>
+          <div class="line"><span class="spk spk-e">Εμείς</span><div class="bubble be" ondblclick="startEdit(this)" data-key="sa2_4">«Θεατρικές παραστάσεις για παιδιά 18μηνών–16 ετών, με ζωντανή μουσική και ενεργητική συμμετοχή. Μπορούν να έρθουν στο θέατρό μας ή να έρθουμε εμείς στον χώρο σας. Σας στέλνω αναλυτικό υλικό και για τα δύο;»</div></div>
+        </div>
+        <div class="slinks">
+          <a class="lp" href="https://morfesekfrasis.gr/argastiria-enilikes-morfesekfrasis-2025.html">Εργαστήρια Ενηλίκων</a>
+          <a class="lp" href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html">Παραστάσεις τώρα</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Summer Camp Κόστος</a>
+        </div>
+      </div>
+    </div>
+
   </div>
-</section>
 
-<div class="sep"></div>
+  <!-- ═══════════ EMAILS ═══════════ -->
+  <div id="emails" class="sec">
+    <div class="tabs">
+      <button class="tab on" onclick="swTab('et',0,this)">Παραστάσεις</button>
+      <button class="tab" onclick="swTab('et',1,this)">Summer Camp</button>
+      <button class="tab" onclick="swTab('et',2,this)">Follow-up</button>
+    </div>
 
-<!-- ── EMAILS ──────────────────────────────────────────────────────────── -->
-<section class="section" id="emails">
-  <div class="sec-hd"><span class="sec-title">Email Templates</span></div>
-  <p class="sec-desc">Αντίγραψε, συμπλήρωσε τα [ ] και στείλε από morfesconnect@gmail.com</p>
+    <!-- EMAILS ΠΑΡΑΣΤΑΣΕΙΣ -->
+    <div class="panel on" id="et0">
+      <div class="tabs" style="margin-bottom:12px">
+        <button class="tab tab-sm on" onclick="swTab('ep',0,this)">Παιδ. Σταθμός / Νηπ.</button>
+        <button class="tab tab-sm" onclick="swTab('ep',1,this)">Δημοτικό</button>
+        <button class="tab tab-sm" onclick="swTab('ep',2,this)">Γυμνάσιο / Λύκειο</button>
+        <button class="tab tab-sm" onclick="swTab('ep',3,this)">Δήμοι</button>
+        <button class="tab tab-sm" onclick="swTab('ep',4,this)">Εταιρείες</button>
+      </div>
 
-  <div class="email-box">
-    <div class="email-meta"><strong>ΘΕΜΑ:</strong> Θεατρικές Παραστάσεις για το Σχολείο/Νηπιαγωγείο σας — Μορφές Έκφρασης &nbsp;|&nbsp; <strong>ΑΠΟ:</strong> morfesconnect@gmail.com</div>
-    <div class="email-body">Αγαπητέ/ή [κ./κα Επίθετο],
+      <!-- Email Παιδικός/Νηπ -->
+      <div class="panel on" id="ep0">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Θεατρικές παραστάσεις για τα μικρά σας — Μορφές Έκφρασης</span></div><div class="emr"><span class="eml">ΑΠΟ</span><span class="emv">morfesconnect@gmail.com</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Υπεύθυνος/η παιδικού σταθμού ή νηπιαγωγείου]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
 
-Σας γράφουμε από το Θέατρο Μορφές Έκφρασης (morfesekfrasis.gr), με 30 χρόνια παρουσίας στην εκπαιδευτική κοινότητα της Αθήνας.
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — ένα θέατρο με 30 χρόνια παρουσίας στην Αθήνα, που ίδρυσε και διευθύνει ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός.
 
-Σας προτείνουμε τις θεατρικές μας παραστάσεις για μαθητές σας:
+Αφιερώσαμε τρεις δεκαετίες σε ένα πράγμα: να φτιάχνουμε θέατρο που αγγίζει αληθινά τα παιδιά. Όχι απλή ψυχαγωγία — παραστάσεις με ζωντανή μουσική, κίνηση και ενεργητική συμμετοχή, σχεδιασμένες ειδικά για κάθε ηλικία. Ακόμα και από 18 μηνών.
 
-🧸 «Κού-Κου! Μια Βολτά στο Δάσος» — 18μ–5 ετών | Κυριακές 11:00
-🐉 «Ο Δράκος των Χρωμάτων» — 3–7 ετών | Κυριακές 18:00
-🏴‍☠️ «Ο Πειρατής Μπου!» — 3,5–9 ετών | Κυριακές 12:30
-🔔 «Το Παιδί και το Κουδουνάκι» — 3,5–8 ετών | Σάββατα 18:00
+Αυτή τη σεζόν έχουμε:
+🧸 «Κού-Κου! Μια Βολτά στο Δάσος» (18μ.–5ετ) — Κυριακές 11:00
+Ένα παιδί γίνεται φίλο με ένα πουλί. Τρυφερή, ήρεμη, γεμάτη φύση — ιδανική ακόμα και για τα πιο μικρά.
 
-📍 Θέατρο Αλκμήνης 13, Κ. Πετράλωνα — τα παιδιά έρχονται με τον εκπαιδευτικό τους
-✓ 60 λεπτά | ✓ Ζωντανή μουσική | ✓ Ενεργητική συμμετοχή παιδιών
+🐲 «Ο Δράκος των Χρωμάτων» (3–7ετ) — Κυριακές 18:00
+Ένας χαριτωμένος Δράκος σε ένα πολύχρωμο δάσος. Μιλά για τη διαφορετικότητα — με χιούμορ και μουσική που τα παιδιά αγαπούν αμέσως.
 
-Επίσης: παράσταση-βαλίτσα στον χώρο σας, κατόπιν συνεννόησης.
+🐄 «Χεη-Χοπ! Παιχνίδια στη Φάρμα» (18μ.–5ετ)
+Τα παιδιά μαθαίνουν κάθε ζώο, τον ήχο του, το φαγητό του — και είναι μέρος της ιστορίας.
 
-Εισιτήρια: ticketservices.gr
-Παραστάσεις για σχολεία: morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html
+Όλες: ζωντανή μουσική · 50–60 λεπτά · ενεργητική συμμετοχή παιδιών.
+Έρχεστε στο θέατρό μας (Αλκμήνης 13, Κ. Πετράλωνα) ή ερχόμαστε εμείς με παράσταση-βαλίτσα.
 
-Θα χαρούμε να σας στείλουμε αναλυτικό υλικό ή να μιλήσουμε τηλεφωνικά.
+Οι θέσεις για σχολικές ομάδες είναι περιορισμένες — αξίζει να κλείσουμε ημερομηνία εγκαίρως.
+
+Θα χαρώ να σας στείλω αναλυτικό υλικό ή να μιλήσουμε τηλεφωνικά.
 
 Με εκτίμηση,
-[Όνομα Συνεργάτη]
-Θέατρο Μορφές Έκφρασης
-📞 210-3464903 | morfesconnect@gmail.com | morfesekfrasis.gr</div>
-  </div>
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance.html">Παιδικοί Σταθμοί</a>
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-nipiagogeia-morfesekfrasis.html">Νηπιαγωγεία</a>
+          <a class="lp" href="https://www.ticketservices.gr/event/koukou-mia-volta-sto-dasos-2025-26/?lang=el">Εισιτήρια Κού-Κου</a>
+          <a class="lp" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">Εισιτήρια Δράκος</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
 
-  <div class="email-box">
-    <div class="email-meta"><strong>ΘΕΜΑ:</strong> Summer Camp 2026 — Εταιρικό Πακέτο για τα παιδιά των εργαζομένων σας &nbsp;|&nbsp; <strong>ΑΠΟ:</strong> morfesconnect@gmail.com</div>
-    <div class="email-body">Αγαπητέ/ή [κ./κα Επίθετο],
+      <!-- Email Δημοτικό -->
+      <div class="panel" id="ep1">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Θέατρο στο σχολείο σας — παραστάσεις &amp; εργαστήρια για κάθε τάξη</span></div><div class="emr"><span class="eml">ΑΠΟ</span><span class="emv">morfesconnect@gmail.com</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Διευθυντής/ντρια ή υπεύθυνος/η πολιτιστικών]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
 
-Σας γράφουμε από το Θέατρο Μορφές Έκφρασης (morfesekfrasis.gr), 30 χρόνια ιστορίας στην καλλιτεχνική εκπαίδευση παιδιών στην Αθήνα.
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — με 30 χρόνια παρουσίας στην εκπαιδευτική κοινότητα της Αθήνας, υπό τη διεύθυνση του κ. Θωμά Κινδύνη, σκηνοθέτη, ηθοποιού και ιδρυτή.
 
-Φέτος καλοκαίρι: 13ο Καλλιτεχνικό Summer Camp 2026
+Ξέρω πόσο απαιτητικό είναι να οργανώνεις πολιτιστικές δράσεις για ένα ολόκληρο σχολείο — και πόσο σημαντικό είναι αυτό που επιλέγεις να αφήνει κάτι στα παιδιά.
+
+Αυτή τη σεζόν παίζουμε:
+🐉 «Ο Δράκος των Χρωμάτων» (Α'–Β' Δημοτικού, 3–7ετ)
+Ιστορία για τη διαφορετικότητα — με χιούμορ, ζωντανή μουσική και ενέργεια που δεν ξεχνιέται εύκολα.
+
+🏴‍☠️ «Ο Πειρατής Μπου!» (Β'–Δ' Δημοτικού, 3,5–9ετ)
+Αυτοπεποίθηση και θαλάσσιο περιβάλλον — τα παιδιά γίνονται μέρος της περιπέτειας.
+
+🔔 «Το Παιδί &amp; το Κουδουνάκι» (3,5–8ετ) — Σάββατα 18:00
+
+60 λεπτά · ζωντανή μουσική · από 8€ · παράσταση-βαλίτσα διαθέσιμη.
+
+Επίσης: θεατρικά εργαστήρια για όλες τις τάξεις και — για τους γονείς — το 13ο Summer Camp μας στον Βοτανικό Κήπο για παιδιά 4–11 ετών (15/6–31/7, από 107€/εβδ.).
+
+Οι διαθέσιμες ημερομηνίες για σχολικές ομάδες γεμίζουν γρήγορα. Αξίζει να επικοινωνήσουμε σύντομα.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schoolperformance-dimotiko-morfesekfrasis.html">Δημοτικό</a>
+          <a class="lp" href="https://www.ticketservices.gr/event/o-drakos-ton-xromaton-2025-26/?lang=el">Δράκος Χρωμάτων</a>
+          <a class="lp" href="https://www.ticketservices.gr/event/o-peiratis-mpou-2025-26/?lang=el">Πειρατής Μπου</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp</a>
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html">Εκπαιδευτικά</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Email Γυμνάσιο -->
+      <div class="panel" id="ep2">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Ένας χώρος για τους εφήβους σας — Teens Theatre Club &amp; Summer Camp</span></div><div class="emr"><span class="eml">ΑΠΟ</span><span class="emv">morfesconnect@gmail.com</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Διευθυντής/ντρια ή υπεύθυνος/η προγραμμάτων]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια εκπαιδευτικού θεάτρου, που ίδρυσε ο κ. Θωμάς Κινδύνης, σκηνοθέτης, ηθοποιός και Διευθυντής.
+
+Ξέρουμε πόσο δύσκολο είναι να τραβήξεις τους εφήβους σε κάτι δημιουργικό. Το Teens Theatre Club φτιάχτηκε ακριβώς γι' αυτό — εβδομαδιαίο εργαστήριο για Β' Γυμνασίου έως Λύκειο, όπου οι έφηβοι εκφράζονται χωρίς να κρίνονται και ανακαλύπτουν φωνή, κίνηση, αυτοπεποίθηση.
+
+Και για το καλοκαίρι — δύο εντατικά προγράμματα για εφήβους 12–16 ετών:
+🎭 Ακαδημία Θεάτρου (5ο Master Class) — 22/6–3/7 · από 320€ early bird έως 1/6
+🎬 Master Class Κινηματογράφου (4ο) — Ιούλιος · από 320€ early bird έως 1/6
+
+Εμπειρίες που οι έφηβοι θυμούνται για χρόνια. Οι εγγραφές κλείνουν σύντομα.
+
+Θα χαρώ να σας στείλω αναλυτικό υλικό.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/paidi-kai-texni/efiko-theatrikoergastiri-morfesekfrasis25.html">Teens Theatre Club</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-13-17-summrer-camp-theatro.html">Ακαδημία Θεάτρου</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html">Κινηματογράφος</a>
+          <a class="lp" href="https://forms.gle/2Qe5kfZdZZUwNbLk7">Εγγραφή Ακαδημία</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Email Δήμοι -->
+      <div class="panel" id="ep3">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Καλλιτεχνικές δράσεις για παιδιά &amp; εφήβους — πρόταση συνεργασίας</span></div><div class="emr"><span class="eml">ΑΠΟ</span><span class="emv">morfesconnect@gmail.com</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Υπεύθυνος/η Παιδείας ή Πολιτισμού Δήμου]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια εκπαιδευτικής και καλλιτεχνικής παρουσίας στην Αθήνα. Ιδρυτής και Διευθυντής είναι ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός.
+
+Απευθύνομαι σε εσάς για μια πρόταση συνεργασίας που αφορά παιδιά και εφήβους του δήμου σας — ηλικίες από 18 μηνών έως 16 ετών.
+
+Τι μπορούμε να κάνουμε μαζί:
+→ Παραστάσεις σε δημοτικές δομές &amp; παιδικούς σταθμούς (από 18μ.)
+→ Θέσεις στο 13ο Summer Camp στον Βοτανικό Κήπο (4–16ετ, 15/6–31/7)
+→ Εκπαιδευτικά εργαστήρια σε σχολεία της περιοχής
+
+Φέτος τρέχουν ήδη εγγραφές για το camp — αν θέλετε να δεσμεύσουμε θέσεις για παιδιά δημοτών εγκαίρως, μπορούμε να μιλήσουμε σύντομα.
+
+Θα χαρώ να σας στείλω αναλυτική πρόταση.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+          <a class="lp" href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html">Παραστάσεις τώρα</a>
+          <a class="lp" href="https://morfesekfrasis.gr/sxolikes-draseis/schooleducation.html">Εκπαιδευτικά</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή Camp 4–11</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Email Εταιρείες Παραστάσεις -->
+      <div class="panel" id="ep4">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Εταιρικές εκδηλώσεις &amp; καλοκαίρι παιδιών εργαζομένων — Μορφές Έκφρασης</span></div><div class="emr"><span class="eml">ΑΠΟ</span><span class="emv">morfesconnect@gmail.com</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Υπεύθυνος/η HR ή CSR]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια καλλιτεχνικής παρουσίας στην Αθήνα, υπό τη διεύθυνση του κ. Θωμά Κινδύνη, ιδρυτή, σκηνοθέτη και ηθοποιού.
+
+Έχουμε δύο προτάσεις που μπορούν να ενισχύσουν τα benefits της εταιρείας σας:
+
+🎭 Παραστάσεις για παιδιά εργαζομένων (18μ.–16ετ)
+Ιδανικές για εταιρικές εκδηλώσεις, χριστουγεννιάτικες γιορτές ή απλώς ως benefit στη χρονιά. Με ζωντανή μουσική και ενεργητική συμμετοχή — παιδιά και γονείς φεύγουν χαρούμενοι.
+
+☀️ Summer Camp 2026 για παιδιά &amp; εφήβους 4–16 ετών
+Βοτανικός Κήπος Διομήδους · 15/6–31/7 · 08:00–16:00
+Εταιρικές τιμές από 107€/εβδ. (early bird έως 1/6) · τιμολόγιο κανονικά.
+
+Κάθε καλοκαίρι, γονείς-εργαζόμενοι αντιμετωπίζουν το ίδιο ερώτημα: τι κάνουν τα παιδιά; Εταιρείες που έχουν απαντήσει σε αυτό βλέπουν διαφορά.
+
+Το early bird κλείνει 1η Ιουνίου — αν θέλετε να ενημερώσετε τους εργαζόμενους εγκαίρως, αξίζει να μιλήσουμε σύντομα.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος Camp</a>
+          <a class="lp" href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html">Παραστάσεις τώρα</a>
+          <a class="lp" href="https://morfesekfrasis.gr/argastiria-enilikes-morfesekfrasis-2025.html">Εργαστήρια Ενηλίκων</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+          <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+    </div>
+
+    <!-- EMAILS SUMMER CAMP -->
+    <div class="panel" id="et1">
+      <div class="tabs" style="margin-bottom:12px">
+        <button class="tab tab-sm on" onclick="swTab('ec',0,this)">Γονείς 4–11</button>
+        <button class="tab tab-sm" onclick="swTab('ec',1,this)">Γονείς 12–16</button>
+        <button class="tab tab-sm" onclick="swTab('ec',2,this)">Σχολεία</button>
+        <button class="tab tab-sm" onclick="swTab('ec',3,this)">Εταιρείες</button>
+        <button class="tab tab-sm" onclick="swTab('ec',4,this)">Δήμοι</button>
+      </div>
+
+      <!-- Camp Email Γονείς 4–11 -->
+      <div class="panel on" id="ec0">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Ένα καλοκαίρι που το παιδί σας δεν θα ξεχάσει — Summer Camp 2026</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Γονέας παιδιού 4–11 ετών]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — το θέατρο που ίδρυσε ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός με 30 χρόνια αφοσίωσης στο εκπαιδευτικό θέατρο.
+
+Φέτος είναι η 13η χρονιά του καλλιτεχνικού Summer Camp μας — και κάθε χρόνο τα παιδιά που έρχονται φεύγουν με κάτι που δεν το βρίσκεις στο τυπικό camp: αυτοπεποίθηση, δημιουργικότητα, και φίλους που έφτιαξαν κάτι μαζί.
+
+☀️ 13ο Καλλιτεχνικό Summer Camp 2026
 📍 Βοτανικός Κήπος Διομήδους | 15 Ιουνίου – 31 Ιουλίου
-🕗 08:00–16:00 | Ηλικίες: 4–17 ετών
+🕗 08:00–16:00 | Ηλικίες 4–11 ετών
+🎨 Θέατρο · εικαστικά · μουσική · κίνηση — κάθε μέρα κάτι διαφορετικό
+
+Υπάρχει και φύλαξη, σίτιση και πούλμαν αν χρειαστεί.
+
+Τιμές Early Bird (έως 1η Ιουνίου): από 107€/εβδομάδα
+2ο παιδί: από 95€/εβδομάδα
+
+Οι εγγραφές τρέχουν ήδη και οι Early Bird τιμές κλείνουν σύντομα. Κάντε εγγραφή online τώρα — ή επικοινωνήστε μαζί μας για να απαντήσουμε σε οποιαδήποτε ερώτηση.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος &amp; Πακέτα</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">✅ Εγγραφή τώρα</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/sixnes-erotiseis-summer-camp-26.html">Συχνές Ερωτήσεις</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Camp Email Γονείς 12–16 -->
+      <div class="panel" id="ec1">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Για τον/την έφηβο/η σας — Ακαδημία Θεάτρου &amp; Κινηματογράφος 2026</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Γονέας εφήβου 12–16 ετών]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια εκπαιδευτικού θεάτρου, που ίδρυσε ο κ. Θωμάς Κινδύνης, σκηνοθέτης και ηθοποιός.
+
+Για τους εφήβους 12–16 ετών, φέτος έχουμε τρεις επιλογές:
+
+🎭 Ακαδημία Θεάτρου — 5ο Master Class
+22 Ιουνίου – 3 Ιουλίου · Εντατικό πρόγραμμα · 12–16 ετών
+Φωνή, κίνηση, αυτοσχεδιασμός, σκηνοθεσία — σε ένα εντατικό δεκαήμερο που αλλάζει τον τρόπο που ο έφηβος βλέπει τον εαυτό του.
+→ Από 320€ early bird (έως 1/6)
+
+🎬 Master Class Κινηματογράφου — 4ο
+Ιούλιος · 12–16 ετών
+Για όσους θέλουν να αφηγούνται ιστορίες μέσα από κάμερα — σενάριο, σκηνοθεσία, μοντάζ.
+→ Από 320€ early bird (έως 1/6)
+
+🎨 Καλοκαίρι με Τέχνες — από 16 Ιουνίου
+Εβδομαδιαίο · πιο χαλαρό πρόγραμμα · από 107€/εβδ.
+
+Οι εγγραφές για την Ακαδημία και τον Κινηματογράφο κλείνουν σύντομα — οι θέσεις είναι περιορισμένες.
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26.html">Όλα τα εφηβικά</a>
+          <a class="lp" href="https://forms.gle/2Qe5kfZdZZUwNbLk7">✅ Εγγραφή Ακαδημία</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/efivoi-programma-summer26/efivoi-programma-cinema26.html">Κινηματογράφος</a>
+          <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12+</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Camp Email Σχολεία -->
+      <div class="panel" id="ec2">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Summer Camp 2026 — ενημέρωση για τους γονείς του σχολείου σας</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Διευθυντής/ντρια σχολείου ή νηπιαγωγείου]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια εκπαιδευτικού θεάτρου, υπό τη διεύθυνση του κ. Θωμά Κινδύνη.
+
+Φέτος διοργανώνουμε το 13ο καλλιτεχνικό Summer Camp στον Βοτανικό Κήπο Διομήδους, 15 Ιουνίου–31 Ιουλίου, για παιδιά και εφήβους 4–16 ετών.
+
+Θα ήθελα να σας ζητήσω κάτι απλό: αν θεωρείτε ότι θα ενδιέφερε τους γονείς του σχολείου σας, θα ήταν δυνατό να το μοιραστείτε μέσω e-class ή της ομάδας σας; Θα σας στείλω έτοιμο κείμενο — δεν χρειάζεται να κάνετε τίποτα άλλο.
+
+Σε αντάλλαγμα, οι οικογένειες που θα έρθουν από το σχολείο σας θα έχουν προτεραιότητα στις early bird τιμές (από 107€/εβδ. έως 1/6).
+
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος &amp; Πακέτα</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+          <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+
+      <!-- Camp Email Εταιρείες -->
+      <div class="panel" id="ec3">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Το καλοκαίρι των παιδιών των εργαζομένων σας — Summer Camp 2026</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Υπεύθυνος/η HR ή CSR]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
+
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — 30 χρόνια καλλιτεχνικής εκπαίδευσης, υπό τη διεύθυνση του κ. Θωμά Κινδύνη, ιδρυτή, σκηνοθέτη και ηθοποιού.
+
+Κάθε καλοκαίρι, γονείς-εργαζόμενοι αντιμετωπίζουν το ίδιο ερώτημα: τι κάνουν τα παιδιά όταν κλείσουν τα σχολεία; Εταιρείες που έχουν απαντήσει σε αυτό βλέπουν διαφορά — και οι εργαζόμενοί τους το εκτιμούν βαθιά.
+
+☀️ 13ο Καλλιτεχνικό Summer Camp 2026
+📍 Βοτανικός Κήπος Διομήδους · 15/6–31/7 · 08:00–16:00
 🎨 Θέατρο, κινηματογράφος, εικαστικά, μουσική, κίνηση
+👧 Παιδιά &amp; έφηβοι 4–16 ετών
 
-Για τα παιδιά των εργαζομένων σας:
-→ Εταιρικές τιμές: από 107€/παιδί/εβδομάδα (Early Bird έως 1/6)
-→ Δυνατότητα πληρωμής 2ου παιδιού από 95€/εβδ.
+Για εταιρείες-συνεργάτες:
+→ Εταιρικές τιμές: από 107€/παιδί/εβδ. (Early Bird έως 1/6)
+→ 2ο παιδί: από 95€/εβδ.
 → Τιμολόγιο κανονικά (ΑΦΜ: 801656351)
+→ Έτοιμο ενημερωτικό κείμενο για τους εργαζόμενους
 
-Κόστος & πακέτα: morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html
-Εγγραφή παιδιών: https://forms.gle/kbXy32ykr7W67Yre6
-Εγγραφή εφήβων: https://forms.gle/rKfWPtr9MGzSZ72GA
-
-Μπορούμε να κανονίσουμε σύντομη τηλεφωνική επικοινωνία;
+Το Early Bird κλείνει 1η Ιουνίου — αν θέλετε να ενημερώσετε εγκαίρως, αξίζει να μιλήσουμε σύντομα.
 
 Με εκτίμηση,
-[Όνομα]
-📞 210-3464903 | morfesconnect@gmail.com</div>
-  </div>
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος &amp; Πακέτα</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+          <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/sixnes-erotiseis-summer-camp-26.html">Συχνές Ερωτήσεις</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
 
-  <div class="email-box">
-    <div class="email-meta"><strong>ΘΕΜΑ:</strong> Follow-up — Μορφές Έκφρασης &nbsp;|&nbsp; <strong>ΧΡΗΣΗ:</strong> +5–7 μέρες αν δεν απάντησαν</div>
-    <div class="email-body">Αγαπητέ/ή [κ./κα],
+      <!-- Camp Email Δήμοι -->
+      <div class="panel" id="ec4">
+      <div class="ecard">
+        <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">13ο Summer Camp 2026 — πρόταση συνεργασίας για τον δήμο σας</span></div><div class="emr"><span class="eml">ΠΡΟΣ</span><span class="emv">[Υπεύθυνος/η Παιδείας ή Πολιτισμού Δήμου]</span></div></div>
+        <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
 
-Σας είχα αποστείλει πρόσφατα πρόταση από το Θέατρο Μορφές Έκφρασης — ήθελα να δω αν προλάβατε να τη δείτε.
+Σας γράφω από το Θέατρο Μορφές Έκφρασης — ένα θέατρο με 30 χρόνια εκπαιδευτικής παρουσίας, που ίδρυσε ο κ. Θωμάς Κινδύνης, σκηνοθέτης, ηθοποιός και Ιδρυτής.
 
-Είμαι στη διάθεσή σας για οποιαδήποτε ερώτηση.
-Αν δεν είστε ο κατάλληλος αποδέκτης, σας παρακαλώ να μου υποδείξετε σε ποιον να απευθυνθώ.
+Φέτος διοργανώνουμε το 13ο Καλλιτεχνικό Summer Camp στον Βοτανικό Κήπο Διομήδους — ένα πρόγραμμα για παιδιά και εφήβους 4–16 ετών που συνδυάζει θέατρο, κινηματογράφο, εικαστικά, μουσική και κίνηση.
+
+📍 15 Ιουνίου – 31 Ιουλίου 2026 · 08:00–16:00 · Ηλικίες 4–16 ετών
+💰 Από 107€/εβδ. Early Bird (έως 1/6)
+
+Μια συνεργασία με τον δήμο σας θα μπορούσε να πάρει τη μορφή:
+→ Χρηματοδότησης θέσεων για παιδιά δημοτών
+→ Ανακοίνωσης μέσω δημοτικών καναλιών
+→ Συμφωνίας για μειωμένη τιμή για κατοίκους
+
+Οι εγγραφές τρέχουν ήδη — αν θέλετε να κινηθούμε εγκαίρως, είμαι στη διάθεσή σας για μια σύντομη τηλεφωνική συνομιλία.
 
 Με εκτίμηση,
-[Όνομα]
-📞 [Τηλέφωνο] | morfesconnect@gmail.com</div>
-  </div>
-</section>
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+        <div class="elinks-bar">
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+          <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/morfesekfrasis-summercamp26-symmetoxi-kostos.html">Κόστος</a>
+          <a class="lp" href="https://forms.gle/kbXy32ykr7W67Yre6">Εγγραφή 4–11</a>
+          <a class="lp" href="https://forms.gle/rKfWPtr9MGzSZ72GA">Εγγραφή 12–16</a>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+      </div>
+      </div>
+    </div>
 
-<div class="sep"></div>
+    <!-- FOLLOW-UP -->
+    <div class="panel" id="et2">
+    <div class="ecard">
+      <div class="emeta"><div class="emr"><span class="eml">ΘΕΜΑ</span><span class="ems">Μια μικρή υπενθύμιση — Μορφές Έκφρασης</span></div><div class="emr"><span class="eml">ΧΡΗΣΗ</span><span class="emv">5–7 μέρες μετά το πρώτο email, αν δεν απάντησαν</span></div></div>
+      <div class="ebody">Αγαπητέ/ή κ./κα [Επίθετο],
 
-<!-- ── ΑΝΤΙΡΡΗΣΕΙΣ ────────────────────────────────────────────────────── -->
-<section class="section" id="objections">
-  <div class="sec-hd"><span class="sec-title">Αντιρρήσεις</span></div>
-  <p class="sec-desc">Πώς απαντάμε σε κάθε αντίρρηση</p>
+Σας είχα στείλει πριν λίγες μέρες πρόταση από το Θέατρο Μορφές Έκφρασης — ήθελα να δω αν προλάβατε να τη δείτε ανάμεσα στις υποχρεώσεις σας.
 
-  <div class="obj"><div class="obj-q">«Δεν έχουμε προϋπολογισμό.»</div><div class="obj-a">«Καταλαβαίνω. Τα εισιτήρια ξεκινούν από 8€ — μπορούμε να κανονίσουμε ομαδική επίσκεψη σχολείου με ειδική τιμή. Θα σας στείλω πρόταση;»</div></div>
+Αν κάτι σας τράβηξε το ενδιαφέρον, είμαι στη διάθεσή σας για οποιαδήποτε ερώτηση — ή να μιλήσουμε τηλεφωνικά για 5 λεπτά ώστε να δούμε αν υπάρχει κάτι που να ταιριάζει.
 
-  <div class="obj"><div class="obj-q">«Πού γίνεται η παράσταση;»</div><div class="obj-a">«Στο θέατρό μας, Αλκμήνης 13, Κ. Πετράλωνα — τα παιδιά έρχονται με τους εκπαιδευτικούς τους. Υπάρχει και επιλογή παράσταση-βαλίτσα που έρχεται ο θίασος στον δικό σας χώρο, κατόπιν συνεννόησης.»</div></div>
+Αν δεν είστε ο κατάλληλος αποδέκτης, θα εκτιμούσα αν μπορούσατε να μου υποδείξετε σε ποιον να απευθυνθώ.
 
-  <div class="obj"><div class="obj-q">«Έχουμε ήδη κλείσει πρόγραμμα.»</div><div class="obj-a">«Χαρούμαι! Να κρατήσω τα στοιχεία σας για την επόμενη χρονιά; Ανανεώνουμε παραστάσεις κάθε σεζόν. Σε ποιο email;»</div></div>
-
-  <div class="obj"><div class="obj-q">«Πόσα παιδιά χωράει το θέατρο;»</div><div class="obj-a">«Επικοινωνήστε με τη Μαρία στο 210-3464903 για να ελέγξετε διαθεσιμότητα και να κάνετε κράτηση για σχολική ομάδα.»</div></div>
-
-  <div class="obj"><div class="obj-q">«Χρειάζεται τιμολόγιο;»</div><div class="obj-a">«Ναι, εκδίδουμε κανονικά. ΑΦΜ: 801656351, ΔΟΥ: ΚΕΦΟΔΕ ΑΤΤΙΚΗΣ. Αποδεχόμαστε κατάθεση και μετρητά.»</div></div>
-
-  <div class="obj"><div class="obj-q">«Είναι κατάλληλο για παιδιά με ειδικές ανάγκες;»</div><div class="obj-a">«Είμαστε ειλικρινείς: αυτή τη στιγμή εκπαιδευόμαστε για αυτό και δεν έχουμε ακόμη εξειδικευμένο προσωπικό. Για τυπικά παιδιά το πρόγραμμά μας είναι πολύ ανοιχτό και συμμετοχικό.»</div></div>
-
-  <div class="obj"><div class="obj-q">«Δεν έχω χρόνο τώρα.»</div><div class="obj-a">«Φυσικά! Πότε θα ήταν καλύτερα να σας καλέσω; Θα σημειώσω [ημέρα/ώρα]. Να σας στείλω κάτι στο email στο μεταξύ;»</div></div>
-</section>
-
-<div class="sep"></div>
-
-<!-- ── ΔΙΑΔΙΚΑΣΙΑ ─────────────────────────────────────────────────────── -->
-<section class="section" id="process">
-  <div class="sec-hd"><span class="sec-title">Διαδικασία Πώλησης</span></div>
-  <p class="sec-desc">Από το lead έως το κλείσιμο — βήμα-βήμα</p>
-  <div class="info-card" style="padding:16px 20px">
-    <div class="step"><div class="step-n">1</div><div><div class="step-t">Βρες το lead</div><div class="step-d">Πήγαινε στο σωστό sheet του Excel (Σχολεία / Δήμοι / Εταιρείες κ.λπ.). Γράψε στοιχεία + STATUS = «Νέο».</div></div></div>
-    <div class="step"><div class="step-n">2</div><div><div class="step-t">Πρώτη επαφή</div><div class="step-d">Email (template παραπάνω) ή τηλέφωνο (script). Σκοπός: ενδιαφέρον + άδεια για υλικό. STATUS → «Επικοινωνία». Βάλε FU ημερομηνία.</div></div></div>
-    <div class="step"><div class="step-n">3</div><div><div class="step-t">Follow-up (+5 μέρες)</div><div class="step-d">Αν δεν απάντησαν → follow-up email ή 2η κλήση. Μέγιστο 3 απόπειρες.</div></div></div>
-    <div class="step"><div class="step-n">4</div><div><div class="step-t">Στείλε υλικό + link κλεισίματος</div><div class="step-d">Πάτα το κατάλληλο κουμπί «Εισιτήρια» ή «Εγγραφή» από αυτή τη σελίδα και στείλε το link απευθείας. STATUS → «Ενδιαφέρον».</div></div></div>
-    <div class="step"><div class="step-n">5</div><div><div class="step-t">Κλείσιμο ✅</div><div class="step-d">Αγόρασαν εισιτήριο / συμπλήρωσαν φόρμα / επιβεβαίωσαν. STATUS → «Συμφωνία». Ενημέρωσε Μαρία Τζίμα: 210-3464903.</div></div></div>
-    <div class="step"><div class="step-n">6</div><div><div class="step-t">After-sale</div><div class="step-d">Ρώτα αν θέλουν newsletter. Πρότεινε feedback form. Σημείωσε «Μέλος» για μελλοντικές προτεραιότητες.</div></div></div>
-  </div>
-  <div class="hl">⭐ Κάθε επαφή → ΑΜΕΣΩΣ στο Excel (σωστό sheet). Πάντα βάζεις FU ημερομηνία στήλη N. Κλείσιμο = αλλάζεις STATUS σε «Συμφωνία».</div>
-</section>
-
-<div class="sep"></div>
-
-<!-- ── ΕΠΕΞΕΡΓΑΣΙΑ ────────────────────────────────────────────────────── -->
-<section class="section" id="edit">
-  <div class="sec-hd"><span class="sec-title">✏️ Επεξεργασία</span></div>
-  <p class="sec-desc">Πρόσθεσε scripts, links, σημειώσεις. Αποθηκεύεται τοπικά στον browser σου.</p>
-
-  <div class="edit-section">
-    <div class="edit-sec-title">📞 Επιπλέον Scripts</div>
-    <div id="customScripts"></div>
-    <button class="add-btn-sm" onclick="addScript()">+ Νέο Script</button>
-  </div>
-
-  <div class="edit-section">
-    <div class="edit-sec-title">🔗 Links & Κουμπιά Κλεισίματος</div>
-    <div id="customLinks"></div>
-    <button class="add-btn-sm" onclick="addLink()">+ Νέο Link</button>
-    <div class="save-bar">
-      <button class="save-btn" onclick="saveAll()">💾 Αποθήκευση</button>
-      <span class="save-ok" id="saveOk"></span>
+Με εκτίμηση,
+[Όνομα] | 📞 210-3464903 | morfesconnect@gmail.com</div>
+      <div class="elinks-bar">
+        <a class="lp" href="https://morfesekfrasis.gr">morfesekfrasis.gr</a>
+        <a class="lp" href="https://morfesekfrasis.gr/summer-camp-paidia-efivous-2026-html/summer-camp-2026-morfes-ekfrasis.html">Summer Camp 2026</a>
+        <a class="lp" href="https://morfesekfrasis.gr/morfesekfrasis-vrefikes-paidikes-parastaseis/parastaseis-tora.html">Παραστάσεις τώρα</a>
+      </div>
+      <button class="copy-btn" onclick="copyEmail(this)">📋 Αντιγραφή κειμένου</button>
+    </div>
     </div>
   </div>
 
-  <div class="edit-section">
-    <div class="edit-sec-title">📝 Σημειώσεις Ομάδας</div>
-    <div id="customNotes"></div>
-    <button class="add-btn-sm" onclick="addNote()">+ Νέα Σημείωση</button>
-    <div class="save-bar"><button class="save-btn" onclick="saveAll()">💾 Αποθήκευση</button></div>
+  <!-- ═══════════ ΑΝΤΙΡΡΗΣΕΙΣ ═══════════ -->
+  <div id="objections" class="sec">
+    <div class="obj"><div class="obj-q">«Δεν έχουμε προϋπολογισμό.»</div><div class="obj-a">«Καταλαβαίνω. Τα εισιτήρια ξεκινούν από 8€ — μπορούμε να κανονίσουμε ομαδική επίσκεψη με ειδική τιμή. Θα σας στείλω πρόταση;»</div></div>
+    <div class="obj"><div class="obj-q">«Πού γίνεται η παράσταση;»</div><div class="obj-a">«Στο θέατρό μας, Αλκμήνης 13, Κ. Πετράλωνα. Υπάρχει και παράσταση-βαλίτσα — ο θίασος έρχεται στον χώρο σας.»</div></div>
+    <div class="obj"><div class="obj-q">«Έχουμε ήδη κλείσει πρόγραμμα.»</div><div class="obj-a">«Χαίρομαι που το ακούω! Να κρατήσω τα στοιχεία σας για την επόμενη χρονιά; Σε ποιο email;»</div></div>
+    <div class="obj"><div class="obj-q">«Το camp είναι ακριβό.»</div><div class="obj-a">«Από 107€ είναι η τιμή early bird — αντιστοιχεί περίπου σε 19€/ημέρα για 8 ώρες δημιουργικής απασχόλησης στον Βοτανικό Κήπο. Για 2ο παιδί η τιμή μειώνεται από 95€. Υπάρχουν και πακέτα πολλαπλών εβδομάδων με ακόμα καλύτερη τιμή.»</div></div>
+    <div class="obj"><div class="obj-q">«Το παιδί μου είναι 3 ετών — μπορεί να έρθει στο camp;»</div><div class="obj-a">«Το camp ξεκινά από 4 ετών. Για παιδιά κάτω των 4 ετών έχουμε παραστάσεις από 18 μηνών — "Κού-Κου!" και "Χεη-Χοπ!" — με ζωντανή μουσική και συμμετοχή. Θέλετε να σας στείλω υλικό;»</div></div>
+    <div class="obj"><div class="obj-q">«Το παιδί μου είναι 17 ετών — μπορεί να έρθει στο camp;»</div><div class="obj-a">«Το camp για εφήβους φτάνει έως 16 ετών. Για 17+ έχουμε εργαστήρια θεάτρου ενηλίκων — θα χαρώ να σας στείλω πληροφορίες.»</div></div>
+    <div class="obj"><div class="obj-q">«Χρειάζεται τιμολόγιο;»</div><div class="obj-a">«Ναι, εκδίδουμε κανονικά. ΑΦΜ: 801656351, ΔΟΥ: ΚΕΦΟΔΕ ΑΤΤΙΚΗΣ. IBAN: GR21 0140 5660 5660 0200 2000 021, Alpha Bank.»</div></div>
+    <div class="obj"><div class="obj-q">«Δεν έχω χρόνο τώρα.»</div><div class="obj-a">«Φυσικά! Πότε θα ήταν καλύτερα να σας καλέσω; Θα σημειώσω [ημέρα/ώρα] και θα επικοινωνήσω τότε.»</div></div>
+    <div class="obj"><div class="obj-q">«Γιατί να επιλέξω εσάς και όχι άλλο camp;»</div><div class="obj-a">«30 χρόνια ιστορίας, 13ο καλλιτεχνικό camp στον Βοτανικό Κήπο Διομήδους, υπό τη διεύθυνση του κ. Θωμά Κινδύνη. Δεν είναι φύλαξη — τα παιδιά δημιουργούν κάθε μέρα κάτι αληθινό. Αν θέλετε, σας στέλνω μαρτυρίες γονέων.»</div></div>
   </div>
-</section>
 
-</div><!-- /main -->
+  <!-- ═══════════ ΔΙΑΔΙΚΑΣΙΑ ═══════════ -->
+  <div id="process" class="sec">
+    <div class="card">
+      <div class="card-title">Διαδικασία Πώλησης — Βήμα-βήμα</div>
+      <div class="ps"><span class="psnum">1</span><div><div class="psm">Βρες το lead</div><div class="pss">Σωστό sheet Excel (Σχολεία / Δήμοι / Εταιρείες / Γονείς) · Γράψε στοιχεία · STATUS = «Νέο»</div></div></div>
+      <div class="ps"><span class="psnum">2</span><div><div class="psm">Πρώτη επαφή</div><div class="pss">Email (template από εδώ) ή τηλέφωνο (script από εδώ) · Σκοπός: ενδιαφέρον + άδεια για υλικό · STATUS → «Επικοινωνία» · Βάλε FU ημερομηνία</div></div></div>
+      <div class="ps"><span class="psnum">3</span><div><div class="psm">Follow-up (+5–7 μέρες)</div><div class="pss">Αν δεν απάντησαν → follow-up email ή 2η κλήση · Μέγιστο 3 απόπειρες συνολικά</div></div></div>
+      <div class="ps"><span class="psnum">4</span><div><div class="psm">Στείλε υλικό + link δράσης</div><div class="pss">Πάτα το κατάλληλο link από την καρτέλα Εισιτήρια · STATUS → «Ενδιαφέρον»</div></div></div>
+      <div class="ps"><span class="psnum">5</span><div><div class="psm">Κλείσιμο ✅</div><div class="pss">Αγόρασαν εισιτήριο / συμπλήρωσαν φόρμα / επιβεβαίωσαν · STATUS → «Συμφωνία» · Ενημέρωσε Μαρία: 210-3464903</div></div></div>
+      <div class="ps"><span class="psnum">6</span><div><div class="psm">After-sale</div><div class="pss">Ρώτα αν θέλουν newsletter · Πρότεινε feedback · Σημείωσε «Μέλος» για early bird της επόμενης χρονιάς</div></div></div>
+    </div>
+    <div class="alert-box">⭐ Κάθε επαφή → ΑΜΕΣΩΣ στο Excel (σωστό sheet). FU ημερομηνία πάντα. Κλείσιμο = STATUS «Συμφωνία» + Ενημέρωση Μαρίας.</div>
+  </div>
 
-<div style="background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:18px;font-size:11px;margin-top:40px">
-  Θέατρο Μορφές Έκφρασης · Αλκμήνης 13, Κ. Πετράλωνα · 210-3464903 · 210-3464002 · morfesconnect@gmail.com · morfesekfrasis.gr · ΑΦΜ: 801656351
-</div>
+  <!-- ═══════════ ΚΟΙΝΑ ═══════════ -->
+  <div id="shared" class="sec">
+    <div class="card" style="margin-bottom:12px">
+      <div class="card-title">Το όνομά σου</div>
+      <input class="name-inp" id="username-input" placeholder="π.χ. Μαρία" oninput="saveName()" />
+      <div style="font-size:11px;color:#aaa;margin-top:5px">Εμφανίζεται δίπλα στις καταχωρίσεις σου ώστε να ξέρουν οι άλλοι ποιος έγραψε τι.</div>
+    </div>
+    <div class="card" style="margin-bottom:12px">
+      <div class="card-title">📝 Κοινές Σημειώσεις <span style="font-size:10px;color:#bbb;font-weight:400">(βλέπουν όλοι)</span></div>
+      <div id="shared-notes-list"><div class="loading-msg">Φόρτωση...</div></div>
+      <div class="add-area"><textarea class="add-ta" id="new-shared-note" placeholder="Γράψε σημείωση..."></textarea><button class="add-btn" onclick="addSharedItem('snote','shared-notes-list','new-shared-note',loadSharedNotes)">+ Προσθήκη</button></div>
+    </div>
+    <div class="card" style="margin-bottom:12px">
+      <div class="card-title">📅 Κοινό Ιστορικό <span style="font-size:10px;color:#bbb;font-weight:400">(βλέπουν όλοι)</span></div>
+      <div id="shared-history-list"><div class="loading-msg">Φόρτωση...</div></div>
+      <div class="add-area"><textarea class="add-ta" id="new-shared-hist" placeholder="π.χ. 11/05 · Κλήση στο 3ο Δημοτικό · Ενδιαφέρον για βαλίτσα..."></textarea><button class="add-btn" onclick="addSharedItem('shist','shared-history-list','new-shared-hist',loadSharedHistory)">+ Προσθήκη</button></div>
+    </div>
+    <div class="card">
+      <div class="card-title">📞 Scripts από την Ομάδα <span style="font-size:10px;color:#bbb;font-weight:400">(βλέπουν όλοι)</span></div>
+      <div id="shared-scripts-list"><div class="loading-msg">Φόρτωση...</div></div>
+      <div class="add-area"><textarea class="add-ta" id="new-shared-script" placeholder="Τίτλος + διάλογος..."></textarea><button class="add-btn" onclick="addSharedItem('sscript','shared-scripts-list','new-shared-script',loadSharedScripts)">+ Προσθήκη</button></div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<div class="footer">Θέατρο Μορφές Έκφρασης · Αλκμήνης 13, Κ. Πετράλωνα · 210-3464903 · morfesconnect@gmail.com · morfesekfrasis.gr · ΑΦΜ: 801656351</div>
 
 <script>
-document.getElementById('updateDate').textContent = new Date().toLocaleDateString('el-GR');
+/* ── NAV ── */
+function showSec(id,el){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.mnav').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');el.classList.add('on')}
 
-// Nav active
-document.querySelectorAll('.nav a').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
-    a.classList.add('active');
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
+/* ── TABS ── */
+var _tabGroups={};
+function swTab(group,idx,el){
+  var prefix=group+'_panels';
+  if(!_tabGroups[prefix]){_tabGroups[prefix]=document.querySelectorAll('[id^="'+group+'"]')}
+  _tabGroups[prefix].forEach(function(p,i){p.classList.toggle('on',i===idx)});
+  el.parentElement.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});
+  el.classList.add('on');
+}
+
+/* ── USERNAME ── */
+function getUsername(){return localStorage.getItem('me_username')||''}
+function saveName(){localStorage.setItem('me_username',document.getElementById('username-input').value.trim())}
+
+/* ── SYNC STATUS ── */
+function setSyncStatus(ok){document.getElementById('sync-dot').style.background=ok?'#4ade80':'#f87171';document.getElementById('sync-status').textContent=ok?'Συνδεδεμένο':'Εκτός σύνδεσης'}
+
+/* ── INLINE EDIT ── */
+var _editKey=null,_editOrig=null;
+function startEdit(el){
+  if(el.contentEditable==='true')return;
+  _editKey=el.dataset.key;_editOrig=el.innerHTML;
+  el.contentEditable='true';el.focus();
+  var ea=el.parentElement.querySelector('.edit-actions');
+  if(!ea){ea=document.createElement('div');ea.className='edit-actions show';ea.innerHTML='<button class="ea ea-save" onclick="saveEdit(this)">✓ Αποθήκευση</button><button class="ea ea-cancel" onclick="cancelEdit(this)">✕ Ακύρωση</button>';el.parentElement.appendChild(ea)}else{ea.classList.add('show')}
+}
+async function saveEdit(btn){
+  var bubble=btn.closest('.line').querySelector('.bubble');
+  bubble.contentEditable='false';btn.closest('.edit-actions').classList.remove('show');
+  var txt=bubble.innerHTML.replace(/<span[^>]*>.*?<\/span>/g,'').trim();
+  if(window.storage){try{await window.storage.set('sedit:'+_editKey,txt,true);setSyncStatus(true)}catch(e){setSyncStatus(false)}}
+  _editKey=null;
+}
+function cancelEdit(btn){var bubble=btn.closest('.line').querySelector('.bubble');bubble.innerHTML=_editOrig;bubble.contentEditable='false';btn.closest('.edit-actions').classList.remove('show');_editKey=null}
+
+async function loadScriptEdits(){
+  if(!window.storage)return;
+  try{var keys=await window.storage.list('sedit:',true);if(!keys||!keys.keys)return;
+  for(var k of keys.keys){var sk=k.replace('sedit:','');var el=document.querySelector('[data-key="'+sk+'"]');if(el){var r=await window.storage.get(k,true);if(r&&r.value)el.innerHTML=r.value}}
+  setSyncStatus(true)}catch(e){setSyncStatus(false)}
+}
+
+/* ── SHARED STORAGE ── */
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function nowStr(){var d=new Date();return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getFullYear()).slice(-2)}
+
+async function loadSharedList(prefix,listId){
+  var el=document.getElementById(listId);
+  if(!window.storage){el.innerHTML='<div class="loading-msg">Κοινή αποθήκευση μη διαθέσιμη εδώ.</div>';return}
+  try{var keys=await window.storage.list(prefix,true);el.innerHTML='';
+  if(!keys||!keys.keys||!keys.keys.length){el.innerHTML='<div class="loading-msg" style="color:#ccc">Δεν υπάρχουν καταχωρίσεις ακόμα.</div>';return}
+  var sorted=keys.keys.sort();if(prefix==='shist:')sorted=sorted.reverse();
+  for(var k of sorted){var r=await window.storage.get(k,true);if(r&&r.value){var d=JSON.parse(r.value);var row=document.createElement('div');row.className='shared-entry';row.dataset.storageKey=k;row.innerHTML='<div><div>'+esc(d.text)+'</div><div class="entry-meta">'+esc(d.author||'Άγνωστος')+' · '+esc(d.date)+'</div></div><button class="del-btn" onclick="delShared(this)">✕</button>';el.appendChild(row)}}
+  setSyncStatus(true)}catch(e){setSyncStatus(false);el.innerHTML='<div class="loading-msg">Σφάλμα φόρτωσης.</div>'}
+}
+
+function loadSharedNotes(){return loadSharedList('snote:','shared-notes-list')}
+function loadSharedHistory(){return loadSharedList('shist:','shared-history-list')}
+function loadSharedScripts(){return loadSharedList('sscript:','shared-scripts-list')}
+
+async function addSharedItem(prefix,listId,inputId,reloadFn){
+  var v=document.getElementById(inputId).value.trim();if(!v||!window.storage)return;
+  var key=prefix+':'+Date.now();var data={text:v,author:getUsername()||'Άγνωστος',date:nowStr()};
+  try{await window.storage.set(key,JSON.stringify(data),true);document.getElementById(inputId).value='';await reloadFn();setSyncStatus(true)}catch(e){setSyncStatus(false)}
+}
+
+async function delShared(btn){
+  var row=btn.closest('.shared-entry');var key=row.dataset.storageKey;
+  if(window.storage){try{await window.storage.delete(key,true);setSyncStatus(true)}catch(e){setSyncStatus(false)}}
+  row.remove();
+}
+
+/* ── COPY EMAIL ── */
+function copyEmail(btn){
+  var body=btn.closest('.ecard').querySelector('.ebody').innerText;
+  navigator.clipboard.writeText(body).then(function(){btn.textContent='✓ Αντιγράφηκε!';setTimeout(function(){btn.textContent='📋 Αντιγραφή κειμένου'},2000)});
+}
+
+/* ── INIT ── */
+window.addEventListener('load',async function(){
+  var n=getUsername();if(n)document.getElementById('username-input').value=n;
+  if(!window.storage){setSyncStatus(false);return}
+  setSyncStatus(true);
+  await loadScriptEdits();await loadSharedNotes();await loadSharedHistory();await loadSharedScripts();
+  setInterval(async function(){await loadSharedNotes();await loadSharedHistory();await loadSharedScripts()},30000);
 });
-window.addEventListener('scroll',()=>{
-  let cur='';
-  document.querySelectorAll('.section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
-  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-});
-
-// Storage
-const KEY='morfes_manual_v3';
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch{return {};}}
-function save(d){try{localStorage.setItem(KEY,JSON.stringify(d));return true;}catch{return false;}}
-
-function scriptLineHtml(role,text=''){
-  const cls=role==='us'?'rus':'rcl';
-  const lbl=role==='us'?'Εμείς':'Πελάτης';
-  const sbg=role==='us'?'':'cl';
-  return `<div class="sline" data-role="${role}">
-    <span class="role ${cls}">${lbl}</span>
-    <div class="stext ${sbg}" contenteditable="true">${text||'Γράψε εδώ...'}</div>
-    <button class="del-x" onclick="this.closest('.sline').remove()">×</button>
-  </div>`;
-}
-
-function addScript(title='',lines=[]){
-  const c=document.getElementById('customScripts');
-  const box=document.createElement('div');
-  box.className='script-box';box.style.marginBottom='12px';
-  box.innerHTML=`
-    <div style="background:var(--navy);color:#fff;padding:10px 14px;display:flex;gap:8px;align-items:center;border-radius:12px 12px 0 0">
-      <input class="edit-input" placeholder="Τίτλος script..." value="${title}" style="flex:1;background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.2)">
-      <button class="del-x" onclick="this.closest('.script-box').remove()" style="color:rgba(255,255,255,.5)">×</button>
-    </div>
-    <div style="padding:14px 16px" class="script-lines">
-      ${lines.map(l=>scriptLineHtml(l.role,l.text)).join('')}
-    </div>
-    <div style="padding:0 16px 14px;display:flex;gap:8px">
-      <button class="add-btn-sm" onclick="addScriptLine(this,'us')">+ Εμείς</button>
-      <button class="add-btn-sm" onclick="addScriptLine(this,'client')">+ Πελάτης</button>
-    </div>`;
-  c.appendChild(box);
-}
-function addScriptLine(btn,role){
-  const ld=btn.closest('.script-box').querySelector('.script-lines');
-  const tmp=document.createElement('div');
-  tmp.innerHTML=scriptLineHtml(role);
-  ld.appendChild(tmp.firstElementChild);
-}
-function addLink(label='',url='',btnText=''){
-  const c=document.getElementById('customLinks');
-  const row=document.createElement('div');
-  row.className='edit-row';
-  row.innerHTML=`
-    <input class="edit-input" placeholder="Ετικέτα" value="${label}" style="max-width:200px">
-    <input class="edit-input" placeholder="https://..." value="${url}" style="flex:1;color:var(--teal)">
-    <input class="edit-input" placeholder="Κείμενο κουμπιού" value="${btnText}" style="max-width:160px">
-    <button class="del-x" onclick="this.parentElement.remove()">×</button>`;
-  c.appendChild(row);
-}
-function addNote(text=''){
-  const c=document.getElementById('customNotes');
-  const row=document.createElement('div');
-  row.className='edit-row';row.style.alignItems='flex-start';
-  row.innerHTML=`<textarea class="edit-textarea" placeholder="Σημείωση..." style="flex:1">${text}</textarea>
-    <button class="del-x" onclick="this.parentElement.remove()" style="margin-top:8px">×</button>`;
-  c.appendChild(row);
-}
-function saveAll(){
-  const d={scripts:[],links:[],notes:[]};
-  document.querySelectorAll('#customScripts .script-box').forEach(box=>{
-    const title=box.querySelector('input')?.value||'';
-    const lines=[];
-    box.querySelectorAll('.sline').forEach(l=>lines.push({role:l.dataset.role,text:l.querySelector('.stext')?.textContent||''}));
-    d.scripts.push({title,lines});
-  });
-  document.querySelectorAll('#customLinks .edit-row').forEach(row=>{
-    const inp=row.querySelectorAll('input');
-    d.links.push({label:inp[0]?.value,url:inp[1]?.value,btn:inp[2]?.value});
-  });
-  document.querySelectorAll('#customNotes textarea').forEach(t=>d.notes.push(t.value));
-  const ok=save(d);
-  const el=document.getElementById('saveOk');
-  if(el){el.textContent=ok?'✓ Αποθηκεύτηκε':'⚠️ Σφάλμα';setTimeout(()=>el.textContent='',3000);}
-}
-function loadAll(){
-  const d=load();
-  if(d.scripts) d.scripts.forEach(s=>addScript(s.title,s.lines));
-  if(d.links) d.links.forEach(l=>addLink(l.label,l.url,l.btn));
-  if(d.notes) d.notes.forEach(n=>addNote(n));
-}
-function exportJSON(){
-  saveAll();
-  const blob=new Blob([JSON.stringify(load(),null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download='morfes_manual_data.json';a.click();
-}
-loadAll();
 </script>
 </body>
 </html>
